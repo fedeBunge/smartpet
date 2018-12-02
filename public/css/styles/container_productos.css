@@ -1,0 +1,43 @@
+
+.seccion_productos{
+margin:auto;
+padding: 5vw;
+
+}
+
+.container_productos{
+margin: auto;
+display: flex;
+flex-wrap: wrap;
+justify-content:space-around;
+}
+
+
+.producto{
+background-color: white;
+margin-top: 2.5vw;
+}
+
+.producto:hover{
+transform: scale(1.05,1.1);
+box-shadow: 2px 2px 10px #D3D3D2;
+transition-property: all;
+transition-duration: 0.3s;
+transition-timing-function: ease-in;
+}
+
+
+.producto img{
+width: 250px;
+padding: 1vw;
+
+}
+
+.producto h3, .producto h4 {
+color: #333;
+font-family: sans-serif;
+text-align: center;
+font-size: 24px;
+padding: 1vw;
+
+}

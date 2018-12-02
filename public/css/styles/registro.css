@@ -1,0 +1,150 @@
+
+.registro-titulos {
+  margin: 20px auto 5px;
+  border-radius: 5px;
+  border: solid 1px #383737;
+  width: 80%;
+  max-width: 450px;
+  padding: 10px;
+  background-color: #2C3E50;
+  text-align: center;
+}
+
+.registro-titulos h1 {
+  margin: 0 0 12px;
+  color: white;
+  font-size: 22px;
+}
+
+.registro-titulos h2 {
+  margin: 0 0 8px;
+  color: white;
+  font-size: 20px;
+}
+
+.registro-titulos h5 {
+  margin: 0 0 5px;
+  color: white;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.registro-titulos a {
+  margin: 0 0 8px;
+  color: white;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.registro-formulario {
+  margin: 0 auto 20px;
+  border-radius: 5px;
+  border: solid 1px #383737;
+  width: 80%;
+  max-width: 450px;
+  padding: 12px;
+  background-color: white;
+  font-size: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.registro-container-campos {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.registro-nombre-y-campo {
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.registro-nombre {
+  width: 40%;
+  margin: 5px;
+}
+
+.registro-campo {
+  width: 50%;
+  margin: 5px;
+}
+
+.olvide-y-recordar {
+  width: 250px;
+  text-align: center;
+}
+
+.registro-campo input {
+  padding: 5px;
+  width: 100%;
+}
+
+.registro-campo input.seleccionar-archivo {
+  padding: 0;
+  margin: 0;
+}
+
+.registro-leyenda-archivo {
+  width: 150px;
+  font-size: 10px;
+  margin: 5px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.registro-dropdown {
+  padding: 5px;
+}
+
+.registro-error {
+  font-size: 10px;
+  color: red;
+  margin: 0;
+}
+
+.registro-button {
+  margin-top: 15px;
+  border-radius: 5px;
+  border: solid 1px black;
+  padding: 8px 20px;
+  background-color: #18BC9C;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.registro-button:hover {
+  background-color: #15A98C;
+}
+
+@media (max-width: 600px) {
+
+  .registro-titulos {
+    max-width: 350px;
+  }
+
+  .registro-formulario {
+    max-width: 350px;
+  }
+
+  .registro-nombre-y-campo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .registro-nombre {
+    width: 210px;
+  }
+
+  .registro-campo {
+    width: 210px;
+  }
+
+}
