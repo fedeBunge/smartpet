@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     			['name'=>'Perros'],
           ['name'=>'Gatos'],
           ['name'=>'Peces'],
-    			['name'=>'Rodores'],
+    			['name'=>'Roedores'],
           ['name'=>'Otros'],
     	]);
 
