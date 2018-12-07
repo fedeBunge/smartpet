@@ -28,9 +28,9 @@ class AddForeingKeyToProductsTable extends Migration
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-          $table->dropForeign('products_category_id_foreing');
-          $table->dropForeign('products_brand_id_foreing');
-          $table->dropForeign('products_animal_id_foreing');
+          $table->dropForeign('products_category_id_foreign');
+          $table->dropForeign('products_brand_id_foreign');
+          $table->dropForeign('products_animal_id_foreign');
         });
     }
 }

@@ -25,7 +25,6 @@ class DatabaseSeeder extends Seeder
           $oneProduct->animal()->associate($animals->random(1)->first()->id);
           $oneProduct->save();
 
-          
       }
     }
 }

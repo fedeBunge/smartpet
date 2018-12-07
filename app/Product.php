@@ -10,16 +10,17 @@ use App\Animal;
 class Product extends Model
 {
   protected $guarded=[];
-}
 
-public function category(){
-  return $this->belogsTo(Category::class);
-}
+  public function category(){
+    return $this->belongsTo(Category::class);
+  }
 
-public function brand(){
-  return $this->belogsTo(Brand::class);
-}
+  public function brand(){
+    return $this->belongsTo(Brand::class);
+  }
 
-public function animal(){
-  return $this->belogsTo(Animal::class);
+  public function animal(){
+    return $this->belongsTo(Animal::class);
+  }
+
 }
