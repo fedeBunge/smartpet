@@ -4,8 +4,6 @@
 
 @section('content')
 
-  <hr>
-
   <!-- Bootstrap Carousel START -->
 
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
