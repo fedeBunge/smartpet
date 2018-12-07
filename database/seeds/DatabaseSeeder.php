@@ -12,12 +12,27 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+      DB::table('animals')->insert([
+    			['name'=>'Perros'],
+          ['name'=>'Gatos'],
+          ['name'=>'Peces'],
+    			['name'=>'Rodores'],
+          ['name'=>'Otros'],
+    	]);
+
+         DB::table('categories')->insert([
+    			['name'=>'Alimentos'],
+          ['name'=>'Juguetes'],
+          ['name'=>'Vestimentas'],
+    			['name'=>'Otros'],
+    		]);
+
         factory(App\User::class)->times(150)->create();
 
         $products = factory(App\Product::class)->times(50)->create();
-        $brands = factory(App\Brand::class)->times(15)->create();
-        $categories = factory(App\Category::class)->times(15)->create();
-        $animals = factory(App\Animal::class)->times(15)->create();
+        $brands = factory(App\Brand::class)->times(10)->create();
+        $categories = \App\Category::all();
+        $animals = \App\Animal::all();
 
         foreach ($products as $oneProduct) {
           $oneProduct->brand()->associate($brands->random(1)->first()->id);
