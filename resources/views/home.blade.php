@@ -49,6 +49,7 @@
 
   <!-- Bootstrap Carousel END -->
 
+
   <!-- Bootstrap Product Container START -->
 
   <section class="container-fluid seccion_productos">
@@ -65,5 +66,19 @@
   </section>
 
   <!-- Bootstrap Product Container END -->
+
+  <!-- Bootstrap listado de Productos START -->
+
+  <h2>Listado de productos</h2>
+	<table class="table">
+		<tr>
+			<td>Nombre</td>
+			<td>Precio</td>
+			<td>Imagen</td>
+			<td>Category</td>
+			<td>Brand</td>
+		</tr>
+
+  <!-- Bootstrap listado de Productos END -->
 
 @endsection
