@@ -58,18 +58,18 @@
           <li><a href="#">Perros</a></li>
           <li><a href="#">Gatos</a></li>
           <li><a href="#">Peces</a></li>
-          <li><a href="#">Otros Animales</a></li>
-          <li><a href="#">Alimento para Mascotas</a></li>
+          <li><a href="#">Roedores</a></li>
+          <li><a href="#">Otros animales</a></li>
         </ul>
 
       </div>
 
       <div class="barra-nav-mobile">
         <li><a href="/">Home</a></li>
-        <li><a href="#">Mascotas</a></li>
-        <li><a href="#">Ofertas</a></li>
-        <li><a href="#">Contacto</a></li>
-        <li><a href="#">ONG</a></li>
+        <li><a href="#">Alimentos</a></li>
+        <li><a href="#">Juguetes</a></li>
+        <li><a href="#">Vestimentas</a></li>
+        <li><a href="#">Otros</a></li>
       </div>
 
       <div class="barra-preguntas-frecuentes-mobile">
@@ -98,17 +98,17 @@
         <li><a href="#">Perros</a></li>
         <li><a href="#">Gatos</a></li>
         <li><a href="#">Peces</a></li>
+        <li><a href="#">Roedores</a></li>
         <li><a href="#">Otros Animales</a></li>
-        <li><a href="#">Alimento para Mascotas</a></li>
       </ul>
     </ul>
 
     <ul class="barra-nav">
       <li><a href="/">Home</a></li>
-      <li><a href="#">Mascotas</a></li>
-      <li><a href="#">Ofertas</a></li>
-      <li><a href="#">Contacto</a></li>
-      <li><a href="#">ONG</a></li>
+      <li><a href="#">Alimentos</a></li>
+      <li><a href="#">Juguetes</a></li>
+      <li><a href="#">Vestimentas</a></li>
+      <li><a href="#">Otros</a></li>
     </ul>
 
     <ul class="barra-usuario">
