@@ -52,9 +52,9 @@
 
   <section class="container-fluid seccion_productos">
     <h2 class="titular">Ofertas del día</h2>
-    <div class="container-fluid container_productos">
+    <div class="container-fluid container_productos_grilla">
       @foreach ($productos as $key => $value)
-        <div class="producto">
+        <div class="producto_grilla">
           <img src="{{ $productos[$key]["imagen"] }}" alt="" width="400">
           <h3>{{ $productos[$key]["titulo"] }}</h3>
           <h4>{{ $productos[$key]["precio"] }}</h4>
