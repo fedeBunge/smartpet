@@ -12,6 +12,17 @@ flex-wrap: wrap;
 justify-content:space-around;
 }
 
+.container_buttons{
+margin: auto;
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+justify-content:space-around;
+}
+
+.container_buttons span{
+  color:white;
+}
 
 /*conteiner_productos_grilla en grilla */
 .container_productos_grilla{
