@@ -4,8 +4,8 @@
 
   <nav class="header-superior">
 
-    <a class="link-logo" href="/"><img class="logo" src="images/logo-blanco-navbar.png"></a>
-    <a class="link-logo-mobile" href="/"><img class="logo-mobile" src="images/logo-blanco.png"></a>
+    <a class="link-logo" href="/"><img class="logo" src="/images/logo-blanco-navbar.png"></a>
+    <a class="link-logo-mobile" href="/"><img class="logo-mobile" src="/images/logo-blanco.png"></a>
 
     <form class="form-busqueda" action="/" method="post">
 
@@ -21,8 +21,8 @@
     <!-- Botones de la barra mobile -->
 
     <div class="area-menu-hamburger">
-      <img class="menu-hamburger" src="images/menu-green.png">
-      <img class="menu-hamburger-close hidden" src="images/menu-green-close.png">
+      <img class="menu-hamburger" src="/images/menu-green.png">
+      <img class="menu-hamburger-close hidden" src="/images/menu-green-close.png">
     </div>
 
     <!-- Inicio menú mobile -->
@@ -37,8 +37,8 @@
           <li class="usuario-logueado-mobile">
             <img class="avatar-usuario-mobile" src="/images/avatardemo/avatardemo.png" alt="avatar">
             <span class="nombre-usuario">UsuarioDemo</span>
-            <img class="flecha-izquierda-usu-mobile" src="images/flecha-izquierda-blanca.png" alt="">
-            <img class="cruz-usu-mobile hidden" src="images/cruz-blanca.png" alt="">
+            <img class="flecha-izquierda-usu-mobile" src="/images/flecha-izquierda-blanca.png" alt="">
+            <img class="cruz-usu-mobile hidden" src="/images/cruz-blanca.png" alt="">
           </li>
           <ul class="menu-usuario-logueado-mobile" style="display:none">
             <li><a href="#">Mi perfil</a></li>
@@ -50,25 +50,24 @@
 
       <div class="barra-categorias-mobile">
         <li class="todas-las-categorias-mobile">
-          <img class="flecha-izquierda-mobile" src="images/flecha-izquierda-blanca.png" alt="">
-          <img class="cruz-mobile hidden" src="images/cruz-blanca.png" alt="">
+          <img class="flecha-izquierda-mobile" src="/images/flecha-izquierda-blanca.png" alt="">
+          <img class="cruz-mobile hidden" src="/images/cruz-blanca.png" alt="">
           <span>Todas las categorías</span>
         </li>
         <ul class="menu-categorias-mobile" style="display:none">
-          <li><a href="#">Perros</a></li>
-          <li><a href="#">Gatos</a></li>
-          <li><a href="#">Peces</a></li>
-          <li><a href="#">Roedores</a></li>
-          <li><a href="#">Otros animales</a></li>
+          <li><a href="/listByCategory/1">Alimentos</a></li>
+          <li><a href="/listByCategory/2">Juguetes</a></li>
+          <li><a href="/listByCategory/3">Vestimenta</a></li>
+          <li><a href="/listByCategory/4">Otros Items</a></li>
         </ul>
 
       </div>
 
       <div class="barra-nav-mobile">
-        <li><a href="/">Home</a></li>
-        <li><a href="#">Alimentos</a></li>
-        <li><a href="#">Juguetes</a></li>
-        <li><a href="#">Vestimentas</a></li>
+        <li><a href="/">Perros</a></li>
+        <li><a href="#">Gatos</a></li>
+        <li><a href="#">Peces</a></li>
+        <li><a href="#">Roedores</a></li>
         <li><a href="#">Otros</a></li>
       </div>
 
@@ -80,7 +79,7 @@
 
     <!-- Fin menú mobile -->
 
-    <a class="link-carrito-mobile" href="#"><img class="carrito" src="images/carrito-blanco.png" alt="carrito"></a>
+    <a class="link-carrito-mobile" href="#"><img class="carrito" src="/images/carrito-blanco.png" alt="carrito"></a>
 
   </nav>
 
@@ -91,23 +90,22 @@
     <ul class="barra-categorias">
       <li class="todas-las-categorias">
         Todas las categorías
-        <img class="flecha-abajo-cat" src="images/flecha-abajo-blanca.png" alt="">
-        <img class="cruz-cat hidden" src="images/cruz-blanca.png" alt="">
+        <img class="flecha-abajo-cat" src="/images/flecha-abajo-blanca.png" alt="">
+        <img class="cruz-cat hidden" src="/images/cruz-blanca.png" alt="">
       </li>
       <ul class="menu-categorias" style="display:none">
-        <li><a href="#">Perros</a></li>
-        <li><a href="#">Gatos</a></li>
-        <li><a href="#">Peces</a></li>
-        <li><a href="#">Roedores</a></li>
-        <li><a href="#">Otros Animales</a></li>
+        <li><a href="/listByCategory/1">Alimentos</a></li>
+        <li><a href="/listByCategory/2">Juguetes</a></li>
+        <li><a href="/listByCategory/3">Vestimenta</a></li>
+        <li><a href="/listByCategory/4">Otros Items</a></li>
       </ul>
     </ul>
 
     <ul class="barra-nav">
-      <li><a href="/">Home</a></li>
-      <li><a href="#">Alimentos</a></li>
-      <li><a href="#">Juguetes</a></li>
-      <li><a href="#">Vestimentas</a></li>
+      <li><a href="/">Perros</a></li>
+      <li><a href="#">Gatos</a></li>
+      <li><a href="#">Peces</a></li>
+      <li><a href="#">Roedores</a></li>
       <li><a href="#">Otros</a></li>
     </ul>
 
@@ -119,8 +117,8 @@
         <li class="usuario-logueado">
           <img class="avatar-usuario" src="/images/avatardemo/avatardemo.png" alt="avatar">
           <span class="nombre-usuario">UsuarioDemo</span>
-          <img class="flecha-abajo-usu" src="images/flecha-abajo-blanca.png" alt="">
-          <img class="cruz-usu hidden" src="images/cruz-blanca.png" alt="">
+          <img class="flecha-abajo-usu" src="/images/flecha-abajo-blanca.png" alt="">
+          <img class="cruz-usu hidden" src="/images/cruz-blanca.png" alt="">
         </li>
         <ul class="menu-usuario-logueado" style="display:none">
           <li><a href="#">Mi perfil</a></li>
@@ -129,7 +127,7 @@
         </ul>
       {{-- } --}}
 
-      <a class="link-carrito" href="#"><img class="carrito" src="images/carrito-blanco.png" alt="carrito"></a>
+      <a class="link-carrito" href="#"><img class="carrito" src="/images/carrito-blanco.png" alt="carrito"></a>
 
     </ul>
 
