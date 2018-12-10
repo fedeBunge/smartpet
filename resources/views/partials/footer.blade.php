@@ -14,10 +14,10 @@
         <h3>Nuestras redes sociales</h3>
         <nav>
           <ul>
-            <li><a href="https://www.instagram.com/" target="_blank"><img src="images/instagram-blanco.png"></a></li>
-            <li><a href="https://www.facebook.com/" target="_blank"><img src="images/facebook-blanco.png"></a></li>
-            <li><a href="https://www.twitter.com/" target="_blank"><img src="images/twitter-blanco.png"></a></li>
-            <li><a href="https://www.linkedin.com/" target="_blank"><img src="images/linkedin-blanco.png"></a></li>
+            <li><a href="https://www.instagram.com/" target="_blank"><img src="/images/instagram-blanco.png"></a></li>
+            <li><a href="https://www.facebook.com/" target="_blank"><img src="/images/facebook-blanco.png"></a></li>
+            <li><a href="https://www.twitter.com/" target="_blank"><img src="/images/twitter-blanco.png"></a></li>
+            <li><a href="https://www.linkedin.com/" target="_blank"><img src="/images/linkedin-blanco.png"></a></li>
           </ul>
         </nav>
       </div>
