@@ -49,11 +49,16 @@ class productsController extends Controller
      */
     public function show($id)
     {
+
+    }
+
+    public function categoryById($id)
+    {
       if ($category= Category::find($id)) {
         //$productsCategory=  DB::table('products')->where('category_id','=',$id)->skip(0)->take(5)->get();
       $productsCategory= Product::where('category_id', '=', $id)->skip(0)->take(7)->get();
       $pages = (Product::where('category_id', '=', $id)->count())/5;
-      return view('list.listByCategory')->with(compact('productsCategory','category', 'pages'));
+      return view('products.list.listByCategory')->with(compact('productsCategory','category', 'pages'));
       }else {
         return('<h1>Categoria inexistente</h1>');
       }
@@ -89,7 +94,7 @@ class productsController extends Controller
 
        $productsCategory= $productsCategory->skip($skip)->take($take)->get();
        //var_dump($productsCategory);
-       return view('list.listByCategory')->with(compact('productsCategory','category', 'pages'));
+       return view('products.list.listByCategory')->with(compact('productsCategory','category', 'pages'));
       }else {
         return('<h1>Categoria inexistente</h1>');
       }

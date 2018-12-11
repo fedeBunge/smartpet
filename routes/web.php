@@ -14,5 +14,7 @@
 Route::get('/', 'HomeController@index');
 
 Route::get('/faq', 'StaticController@indexFAQ');
-Route::get('/listByCategory/{id}','productsController@show'); // Lista por category_id
+Route::get('/products/api', 'ProductsController@api');
+Route::resource('/products', 'ProductsController');
+Route::get('/listByCategory/{id}','productsController@categoryById'); // Lista por category_id
 Route::get('/listByCategory/{id}/{page}','productsController@pagesCategory'); //  Lista por category_id paginado
