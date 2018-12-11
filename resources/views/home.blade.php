@@ -67,7 +67,7 @@
 
   <!-- Bootstrap listado de Productos START -->
 
-  <h2>Listado de productos</h2>
+  {{-- <h2>Listado de productos</h2>
 	<table class="table">
 		<tr>
 			<td>Nombre</td>
@@ -75,7 +75,7 @@
 			<td>Imagen</td>
 			<td>Category</td>
 			<td>Brand</td>
-		</tr>
+		</tr> --}}
 
   <!-- Bootstrap listado de Productos END -->
 

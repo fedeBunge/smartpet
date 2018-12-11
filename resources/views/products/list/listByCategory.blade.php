@@ -13,8 +13,8 @@
 
 @section('content')
 
-            {{-- @dd($productsCategory->first()->category_id) --}}
-
+{{-- @dd($productsCategory->first()->category_id) --}}
+<div class="container_productos">
   @forelse ($productsCategory as $oneProduct)
   <div class="producto">
     <a href="lalogomez"><img src="{{$oneProduct->image}}" alt="" class="">  </a>
@@ -27,14 +27,16 @@
     <h2>No hemos encontrado lo estas buscando</h2>
   @endforelse
 
-  <br>
-    {{-- Paginado --}}
-    <div class="container_buttons">
-      @for ($i=0; $i < $pages; $i++)
-        <button type="button" name="" class="btn btn-info" ><a href="/listByCategory/{{$productsCategory->first()->category_id}}/{{$i}}"><span>{{$i+1}}</span></a></button>
-        <br>
-      @endfor
-    </div>
+</div>
+<br>
+  {{-- Paginado --}}
+<div class="container_buttons">
+  @for ($i=0; $i < $pages; $i++)
+
+    <a href="/listByCategory/{{$productsCategory->first()->category_id}}/{{$i}}" class="btn btn-info {{ $i == $pageIndex ? 'pageIndex' : null}}"  >{{$i+1}}</a>
+  
+  @endfor
+</div>
 
 
 @endsection

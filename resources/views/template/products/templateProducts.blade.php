@@ -19,9 +19,9 @@
           <div class="container-secundario">
             <section class="container-fluid">
               <h2 class="titular">@yield('category')</h2>
-              <div class="container_productos">
+
               @yield('content')
-              </div>
+              
             </section>
           </div>
           @include('partials.footer')

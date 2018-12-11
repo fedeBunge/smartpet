@@ -9,7 +9,7 @@
     <h5>Completa todos los datos</h5>
   </div>
 
-  <form class="registro-formulario crear-producto" action="/products/store" method="post" enctype="multipart/form-data">
+  <form class="registro-formulario crear-producto" action="/products" method="post" enctype="multipart/form-data">
 
     @csrf
 
