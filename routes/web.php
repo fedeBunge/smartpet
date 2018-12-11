@@ -13,6 +13,9 @@
 
 Route::get('/', 'HomeController@index');
 
+Route::get('/products/create', 'ProductsController@create');
+Route::post('/products/store', 'ProductsController@store');
+
 Route::get('/faq', 'StaticController@indexFAQ');
-Route::get('/listByCategory/{id}','productsController@show'); // Lista por category_id
-Route::get('/listByCategory/{id}/{page}','productsController@pagesCategory'); //  Lista por category_id paginado
+Route::get('/listByCategory/{id}','ProductsController@show'); // Lista por category_id
+Route::get('/listByCategory/{id}/{page}','ProductsController@pagesCategory'); //  Lista por category_id paginado

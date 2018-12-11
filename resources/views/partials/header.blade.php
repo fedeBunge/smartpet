@@ -11,7 +11,7 @@
 
       <input class="input-busqueda" type="text" name="search" value="" placeholder="¿Qué necesitas?" autofocus>
       <button class="boton-lupa" type="submit" name="button">
-        <img class="lupa" src="images/lupa.png" alt="">
+        <img class="lupa" src="/images/lupa.png" alt="">
       </button>
 
     </form>

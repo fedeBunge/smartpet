@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
+use App\Brand;
+use App\Animal;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
@@ -27,7 +29,11 @@ class productsController extends Controller
      */
     public function create()
     {
-        //
+      $categories = Category::all();
+      $brands = Brand::all();
+      $animals = Animal::all();
+
+      return view('products.create')->with(compact('categories', 'brands', 'animals'));
     }
 
     /**
@@ -38,7 +44,32 @@ class productsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+      $request->validate([
+  			'name' => 'required | string | max: 150',
+  			'price' => 'required | numeric | min:10 | max:999999.99',
+        'brand_id' => 'required | integer',
+  			'category_id' => 'required | integer',
+        'animal_id' => 'required | integer',
+        'description' => 'required | string | max:500',
+        'image' => 'required | string'
+
+  		], [
+  			'required' => 'Este campo es obligatorio',
+        'integer' => 'La opción elegida no es válida',
+			  'name.max' => 'Máximo: 150 caracteres',
+  			'price.numeric' => 'El campo precio solo admite números',
+  			'price.min' => 'El precio mínimo es 10',
+  			'price.max' => 'El precio máximo es 999999.99',
+        'description.max' => 'Máximo: 500 caracteres',
+  		]);
+
+      $newProduct = Product::create($request->all());
+
+      echo "<h1>Producto creado exitosamente</h1>";
+
+      dd($newProduct);
+
     }
 
     /**

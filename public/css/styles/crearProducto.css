@@ -1,0 +1,11 @@
+.crear-producto {
+  max-width: 380px;
+}
+
+.descripcion-producto {
+  align-self: flex-start;
+}
+
+.borde-rojo-error {
+  border: solid 2px red;
+}
