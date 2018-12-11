@@ -17,7 +17,8 @@ class productsController extends Controller
      */
     public function index()
     {
-        //
+      $products = Product::all();
+      return view('products.index')->with('products');
     }
 
     /**
@@ -58,7 +59,8 @@ class productsController extends Controller
         //$productsCategory=  DB::table('products')->where('category_id','=',$id)->skip(0)->take(5)->get();
       $productsCategory= Product::where('category_id', '=', $id)->skip(0)->take(7)->get();
       $pages = (Product::where('category_id', '=', $id)->count())/5;
-      return view('products.list.listByCategory')->with(compact('productsCategory','category', 'pages'));
+      $pageIndex=0;
+      return view('products.list.listByCategory')->with(compact('productsCategory','category', 'pages','pageIndex' ));
       }else {
         return('<h1>Categoria inexistente</h1>');
       }
@@ -93,8 +95,9 @@ class productsController extends Controller
       //var_dump($skip." ".$take." ".$pages);
 
        $productsCategory= $productsCategory->skip($skip)->take($take)->get();
+       $pageIndex=$page;
        //var_dump($productsCategory);
-       return view('products.list.listByCategory')->with(compact('productsCategory','category', 'pages'));
+       return view('products.list.listByCategory')->with(compact('productsCategory','category', 'pages', 'pageIndex'));
       }else {
         return('<h1>Categoria inexistente</h1>');
       }
