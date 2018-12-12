@@ -21,14 +21,6 @@ flex-direction: row;
 justify-content:center;
 }
 
-.container_buttons span{
-  color:white;
-}
-
-.pageIndex  {
-  color: #212529;
- }
-
 /*conteiner_productos_grilla en grilla */
 .container_productos_grilla{
   margin: auto;
