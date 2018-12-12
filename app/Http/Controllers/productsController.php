@@ -142,7 +142,13 @@ class productsController extends Controller
      */
     public function edit($id)
     {
-        //
+      $product = Product::find($id);
+
+      $categories = Category::all();
+      $brands = Brand::all();
+      $animals = Animal::all();
+
+      return view('products.edit')->with(compact('product', 'categories', 'brands', 'animals'));
     }
 
     /**
@@ -154,7 +160,41 @@ class productsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $request->validate([
+  			'name' => 'required | string | max: 150',
+  			'price' => 'required | numeric | min:10 | max:999999.99',
+        'brand_id' => 'required | integer',
+  			'category_id' => 'required | integer',
+        'animal_id' => 'required | integer',
+        'description' => 'required | string | max:500',
+        'image' => 'required | string'
+
+  		], [
+  			'required' => 'Este campo es obligatorio',
+        'integer' => 'La opción elegida no es válida',
+			  'name.max' => 'Máximo: 150 caracteres',
+  			'price.numeric' => 'El campo precio solo admite números',
+  			'price.min' => 'El precio mínimo es 10',
+  			'price.max' => 'El precio máximo es 999999.99',
+        'description.max' => 'Máximo: 500 caracteres',
+  		]);
+
+      $product = Product::find($id);
+
+  		$product->name = $request->input('name');
+      $product->price = $request->input('price');
+      $product->brand_id = $request->input('brand_id');
+      $product->category_id = $request->input('category_id');
+      $product->animal_id = $request->input('animal_id');
+      $product->description = $request->input('description');
+      $product->image = $request->input('image');
+
+  		$product->save();
+
+      echo "<h1>Producto editado exitosamente</h1>";
+
+      dd($product);
+
     }
 
     /**

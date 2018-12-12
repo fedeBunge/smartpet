@@ -1,0 +1,56 @@
+.registro-nombre {
+  width: 25%;
+}
+
+.registro-campo {
+  width: 70%;
+}
+
+.descripcion-producto {
+  align-self: flex-start;
+}
+
+.borde-rojo-error {
+  border: solid 2px red;
+}
+
+.container-imagen-editar-producto {
+  justify-content: center;
+  margin: 20px 0 30px;
+}
+
+.imagen-editar-producto {
+  align-self: flex-end;
+  width: 250px;
+  border: solid 1px #383737;
+}
+
+.text-area-crear-editar-productos {
+  width: 295px;
+}
+
+@media (max-width: 600px) {
+
+  .registro-nombre {
+    width: 100%;
+  }
+
+  .registro-campo {
+    width: 95%;
+  }
+
+  .registro-nombre-y-campo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .imagen-editar-producto {
+    align-self: center;
+    width: 200px;
+  }
+
+  .text-area-crear-editar-productos {
+    width: 100%;
+  }
+
+}
