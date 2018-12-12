@@ -31,10 +31,11 @@
 <br>
   {{-- Paginado --}}
 <div class="container_buttons">
-  @for ($i=0; $i < $pages; $i++)
+  {{-- @dd($productsCategory) --}}
+  @for ($i=1; $i <= $pages; $i++)
 
-    <a href="/listByCategory/{{$productsCategory->first()->category_id}}/{{$i}}" class="btn btn-info {{ $i == $pageIndex ? 'pageIndex' : null}}"  >{{$i+1}}</a>
-  
+    <a href="/listByCategory/{{$productsCategory->first()->category_id ? $productsCategory->first()->category_id : '2' }}/{{$i}}" class="btn btn-info {{ $i == $pageIndex ? 'pageIndex' : null}}"  >{{$i}}</a>
+
   @endfor
 </div>
 
