@@ -64,11 +64,11 @@
       </div>
 
       <div class="barra-nav-mobile">
-        <li><a href="/">Perros</a></li>
-        <li><a href="#">Gatos</a></li>
-        <li><a href="#">Peces</a></li>
-        <li><a href="#">Roedores</a></li>
-        <li><a href="#">Otros</a></li>
+        <li><a href="/listByAnimal/1">Perros</a></li>
+        <li><a href="/listByAnimal/2">Gatos</a></li>
+        <li><a href="/listByAnimal/3">Peces</a></li>
+        <li><a href="/listByAnimal/4">Roedores</a></li>
+        <li><a href="/listByAnimal/5">Otros</a></li>
       </div>
 
       <div class="barra-preguntas-frecuentes-mobile">
@@ -102,11 +102,11 @@
     </ul>
 
     <ul class="barra-nav">
-      <li><a href="/">Perros</a></li>
-      <li><a href="#">Gatos</a></li>
-      <li><a href="#">Peces</a></li>
-      <li><a href="#">Roedores</a></li>
-      <li><a href="#">Otros</a></li>
+      <li><a href="/listByAnimal/1">Perros</a></li>
+      <li><a href="/listByAnimal/2">Gatos</a></li>
+      <li><a href="/listByAnimal/3">Peces</a></li>
+      <li><a href="/listByAnimal/4">Roedores</a></li>
+      <li><a href="/listByAnimal/5">Otros</a></li>
     </ul>
 
     <ul class="barra-usuario">
