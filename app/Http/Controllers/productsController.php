@@ -211,7 +211,7 @@ class productsController extends Controller
        $productsAnimal= $productsAnimal->skip($skip)->take($take)->get();
        $pageIndex=$page;
 
-       return view('products.list.listByAnimal')->with(compact('productsAnimal','category', 'pages', 'pageIndex'));
+       return view('products.list.listByAnimal')->with(compact('productsAnimal','animal', 'pages', 'pageIndex'));
       }else {
         return('<h1>Animal inexistente</h1>');
       }
