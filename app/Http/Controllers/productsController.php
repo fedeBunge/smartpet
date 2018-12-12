@@ -150,6 +150,75 @@ class productsController extends Controller
       }
     }
 
+//--- listar productos por animal START here ----//
+
+    public function animalById($id)
+    {
+      if ($animal= Animal::find($id)) {
+        //$productsCategory=  DB::table('products')->where('category_id','=',$id)->skip(0)->take(5)->get();
+        $productsAnimal= Product::where('animal_id', '=', $id);
+        $productsElements= $productsAnimal->count();
+        $takeItems= 10;
+        $takeItems <= $productsElements ?? $takeItems = $productsElements;
+
+        if ($productsElements % $takeItems > 0) {
+          $pages= intdiv( $productsElements,$takeItems)+1;
+        }else {
+          $pages =$productsElements / $takeItems;
+        }
+
+
+        $productsAnimal=$productsAnimal->skip(0)->take($takeItems)->get();
+        $pageIndex=1;
+
+        return view('products.list.listByAnimal')->with(compact('productsAnimal','animal', 'pages','pageIndex' ));
+      }else {
+        return('<h1>Animal inexistente</h1>');
+      }
+    }
+
+    public function pagesAnimal($id, $page){
+      if ($animal= Animal::find($id)) {
+        //$productsCategory=  DB::table('products')->where('category_id','=',$id)->skip(0)->take(5)->get();
+        $productsAnimal= Product::where('animal_id', '=', $id);
+        $productsElements= $productsAnimal->count();
+        $takeItems= 10;
+        $takeItems <= $productsElements ?? $takeItems = $productsElements;
+
+        if ($productsElements % $takeItems > 0) {
+         $pages= intdiv( $productsElements,$takeItems)+1;
+        }else {
+         $pages =$productsElements / $takeItems;
+        }
+        if (($page)<=$pages) {
+
+          if (($page)==$pages) {
+            $take=$productsElements % $takeItems;
+            if (!$take) {
+              $take=$takeItems;
+            }
+            $skip=($page-1) * $takeItems;
+          }else {
+
+            $take=$takeItems;
+            $skip=($page-1) * $takeItems;
+          }
+        }else {
+          $take=$takeItems;
+          $skip=0;
+        }
+
+       $productsAnimal= $productsAnimal->skip($skip)->take($take)->get();
+       $pageIndex=$page;
+
+       return view('products.list.listByAnimal')->with(compact('productsAnimal','category', 'pages', 'pageIndex'));
+      }else {
+        return('<h1>Animal inexistente</h1>');
+      }
+    }
+//--- listar productos por animal ENDS here ----//
+
+
     /**
      * Show the form for editing the specified resource.
      *

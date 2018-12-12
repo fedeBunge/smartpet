@@ -17,5 +17,9 @@ Route::get('/faq', 'StaticController@indexFAQ');
 
 Route::get('/products/api', 'ProductsController@api');
 Route::resource('/products', 'ProductsController');
+
 Route::get('/listByCategory/{id}','productsController@categoryById'); // Lista por category_id
 Route::get('/listByCategory/{id}/{page}','productsController@pagesCategory'); //  Lista por category_id paginado
+
+Route::get('/listByAnimal/{id}','productsController@animalById'); // Lista por animal_id
+Route::get('/listByAnimal/{id}/{page}','productsController@pagesAnimal'); //  Lista por animal_id paginado
