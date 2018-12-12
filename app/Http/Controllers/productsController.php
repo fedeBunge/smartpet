@@ -88,46 +88,62 @@ class productsController extends Controller
     {
       if ($category= Category::find($id)) {
         //$productsCategory=  DB::table('products')->where('category_id','=',$id)->skip(0)->take(5)->get();
-      $productsCategory= Product::where('category_id', '=', $id)->skip(0)->take(7)->get();
-      $pages = (Product::where('category_id', '=', $id)->count())/5;
-      $pageIndex=0;
-      return view('products.list.listByCategory')->with(compact('productsCategory','category', 'pages','pageIndex' ));
+        $productsCategory= Product::where('category_id', '=', $id);
+        $productsElements= $productsCategory->count();
+        $takeItems= 10;
+        $takeItems <= $productsElements ?? $takeItems = $productsElements;
+
+        if ($productsElements % $takeItems > 0) {
+          $pages= intdiv( $productsElements,$takeItems)+1;
+        }else {
+          $pages =$productsElements / $takeItems;
+        }
+
+
+        $productsCategory=$productsCategory->skip(0)->take($takeItems)->get();
+        $pageIndex=1;
+
+        return view('products.list.listByCategory')->with(compact('productsCategory','category', 'pages','pageIndex' ));
       }else {
         return('<h1>Categoria inexistente</h1>');
       }
     }
 
-    public function pagesCategory($id, $page)
-    {
+    public function pagesCategory($id, $page){
+
       if ($category= Category::find($id)) {
         //$productsCategory=  DB::table('products')->where('category_id','=',$id)->skip(0)->take(5)->get();
-      $productsCategory= Product::where('category_id', '=', $id);
-      $productsElements= $productsCategory->count();
-       if ($productsElements%7 > 0) {
-         $pages= intdiv( $productsElements,7)+1;
-       }else {
-         $pages =$productsElements / 7;
-       }
-      if (($page+1)<=$pages) {
+        $productsCategory= Product::where('category_id', '=', $id);
+        $productsElements= $productsCategory->count();
+        $takeItems= 10;
+        $takeItems <= $productsElements ?? $takeItems = $productsElements;
 
-        if (($page+1)==$pages) {
-          $take=$productsElements % 7;
-          $skip=($page)*7;
+        if ($productsElements % $takeItems > 0) {
+         $pages= intdiv( $productsElements,$takeItems)+1;
         }else {
-
-          $take=7;
-          $skip=$page*7;
+         $pages =$productsElements / $takeItems;
         }
-      }else {
-        $take=7;
-        $skip=0;
+        if (($page)<=$pages) {
 
-      }
-      //var_dump($skip." ".$take." ".$pages);
+          if (($page)==$pages) {
+            $take=$productsElements % $takeItems;
+            if (!$take) {
+              $take=$takeItems;
+            }
+            $skip=($page-1) * $takeItems;
+          }else {
+
+            $take=$takeItems;
+            $skip=($page-1) * $takeItems;
+          }
+        }else {
+          $take=$takeItems;
+          $skip=0;
+        }
 
        $productsCategory= $productsCategory->skip($skip)->take($take)->get();
        $pageIndex=$page;
-       //var_dump($productsCategory);
+
        return view('products.list.listByCategory')->with(compact('productsCategory','category', 'pages', 'pageIndex'));
       }else {
         return('<h1>Categoria inexistente</h1>');
