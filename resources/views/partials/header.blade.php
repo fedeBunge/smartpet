@@ -7,11 +7,11 @@
     <a class="link-logo" href="/"><img class="logo" src="/images/logo-blanco-navbar.png"></a>
     <a class="link-logo-mobile" href="/"><img class="logo-mobile" src="/images/logo-blanco.png"></a>
 
-    <form class="form-busqueda" action="/" method="post">
-
+    <form class="form-busqueda" action="{{route('product.finder')}}" method="get">
+      {{-- @csrf --}}
       <input class="input-busqueda" type="text" name="search" value="" placeholder="¿Qué necesitas?" autofocus>
-      <button class="boton-lupa" type="submit" name="button">
-        <img class="lupa" src="/images/lupa.png" alt="">
+      <button class="boton-lupa" type="submit" name="">
+      <img class="lupa" src="/images/lupa.png" alt="">
       </button>
 
     </form>
