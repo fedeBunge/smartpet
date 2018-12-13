@@ -9,6 +9,7 @@ use App\Brand;
 use App\Animal;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductRequest;
 
 class productsController extends Controller
 {
@@ -43,27 +44,8 @@ class productsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-
-      $request->validate([
-  			'name' => 'required | string | max: 150',
-  			'price' => 'required | numeric | min:10 | max:999999.99',
-        'brand_id' => 'required | integer',
-  			'category_id' => 'required | integer',
-        'animal_id' => 'required | integer',
-        'description' => 'required | string | max:500',
-        'image' => 'required | string'
-
-  		], [
-  			'required' => 'Este campo es obligatorio',
-        'integer' => 'La opción elegida no es válida',
-			  'name.max' => 'Máximo: 150 caracteres',
-  			'price.numeric' => 'El campo precio solo admite números',
-  			'price.min' => 'El precio mínimo es 10',
-  			'price.max' => 'El precio máximo es 999999.99',
-        'description.max' => 'Máximo: 500 caracteres',
-  		]);
 
       $newProduct = Product::create($request->all());
 
@@ -134,26 +116,8 @@ class productsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request, $id)
     {
-      $request->validate([
-  			'name' => 'required | string | max: 150',
-  			'price' => 'required | numeric | min:10 | max:999999.99',
-        'brand_id' => 'required | integer',
-  			'category_id' => 'required | integer',
-        'animal_id' => 'required | integer',
-        'description' => 'required | string | max:500',
-        'image' => 'required | string'
-
-  		], [
-  			'required' => 'Este campo es obligatorio',
-        'integer' => 'La opción elegida no es válida',
-			  'name.max' => 'Máximo: 150 caracteres',
-  			'price.numeric' => 'El campo precio solo admite números',
-  			'price.min' => 'El precio mínimo es 10',
-  			'price.max' => 'El precio máximo es 999999.99',
-        'description.max' => 'Máximo: 500 caracteres',
-  		]);
 
       $product = Product::find($id);
 

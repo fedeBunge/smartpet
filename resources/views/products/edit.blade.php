@@ -128,8 +128,15 @@
 
     </div>
 
-    <button class="registro-button" type="submit">Guardar cambios</button>
+    <div class="registro-buttons">
+      <button class="registro-button confirm-button" type="submit">Guardar cambios</button>
+      <button class="registro-button cancel-button" type="">Cancelar</button>
+    </div>
 
   </form>
 
+@endsection
+
+@section('other-scripts')
+  <script src={{ asset('/js/cancelButton.js') }}></script>
 @endsection

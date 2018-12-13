@@ -42,7 +42,6 @@
           </li>
           <ul class="menu-usuario-logueado-mobile" style="display:none">
             <li><a href="#">Mi perfil</a></li>
-            <li><a href="#">Favoritos</a></li>
             <li><a href="#">Salir</a></li>
           </ul>
         {{-- } --}}
@@ -58,7 +57,7 @@
           <li><a href="/listByCategory/1">Alimentos</a></li>
           <li><a href="/listByCategory/2">Juguetes</a></li>
           <li><a href="/listByCategory/3">Vestimenta</a></li>
-          <li><a href="/listByCategory/4">Otros Items</a></li>
+          <li><a href="/listByCategory/4">Otros ítems</a></li>
         </ul>
 
       </div>
@@ -97,7 +96,7 @@
         <li><a href="/listByCategory/1">Alimentos</a></li>
         <li><a href="/listByCategory/2">Juguetes</a></li>
         <li><a href="/listByCategory/3">Vestimenta</a></li>
-        <li><a href="/listByCategory/4">Otros Items</a></li>
+        <li><a href="/listByCategory/4">Otros ítems</a></li>
       </ul>
     </ul>
 
@@ -122,7 +121,6 @@
         </li>
         <ul class="menu-usuario-logueado" style="display:none">
           <li><a href="#">Mi perfil</a></li>
-          <li><a href="#">Favoritos</a></li>
           <li><a href="#">Salir</a></li>
         </ul>
       {{-- } --}}
