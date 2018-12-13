@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->unsignedInteger('brand_id')->nullable();
             $table->unsignedInteger('animal_id')->nullable();
             $table->string('description', 500);
-            $table->string('image');
+            $table->string('image')->default('default-producto.png');
             $table->unsignedDecimal('price',8,2);
             $table->timestamps();
 

@@ -17,7 +17,11 @@
     <div class="registro-container-campos">
 
       <div class="registro-nombre-y-campo container-imagen-editar-producto">
-        <img class="imagen-editar-producto" src="{{ $product->image }}" alt="Imagen del producto">
+        @if (substr($product->image, 0, 4) == 'http')
+          <img class="imagen-editar-producto" src="{{ $product->image }}" alt="Imagen del producto">
+        @else
+          <img class="imagen-editar-producto" src="/storage/products/{{ $product->image }}" alt="Imagen del producto">
+        @endif
       </div>
 
       <div class="registro-nombre-y-campo">
@@ -44,7 +48,15 @@
           <select name="brand_id" value="" class="{{ $errors->has('brand_id') ? 'borde-rojo-error' : '' }}">
             <option value="">-------- Elige una marca --------</option>
             @foreach ($brands as $oneBrand)
-              <option value="{{ $oneBrand->id }}" {{ $product->brand_id == $oneBrand->id ? 'selected' : '' }}>{{ $oneBrand->name }}</option>
+              <option value="{{ $oneBrand->id }}"
+                @if (!$errors->has('brand_id'))
+                  @if (old('brand_id'))
+                    {{ old('brand_id') == $oneBrand->id ? 'selected' : '' }}
+                  @else
+                  {{ $product->brand_id == $oneBrand->id ? 'selected' : '' }}
+                  @endif
+                @endif
+              >{{ $oneBrand->name }}</option>
             @endforeach
           </select>
           <br>
@@ -58,7 +70,15 @@
           <select name="category_id" value="" class="{{ $errors->has('category_id') ? 'borde-rojo-error' : '' }}">
             <option value="">------ Elige una categoría ------</option>
             @foreach ($categories as $oneCategory)
-              <option value="{{ $oneCategory->id }}" {{ $product->category_id == $oneCategory->id ? 'selected' : '' }}>{{ $oneCategory->name }}</option>
+              <option value="{{ $oneCategory->id }}"
+                @if (!$errors->has('category_id'))
+                  @if (old('category_id'))
+                    {{ old('category_id') == $oneCategory->id ? 'selected' : '' }}
+                  @else
+                  {{ $product->category_id == $oneCategory->id ? 'selected' : '' }}
+                  @endif
+                @endif
+              >{{ $oneCategory->name }}</option>
             @endforeach
           </select>
           <br>
@@ -72,7 +92,15 @@
           <select name="animal_id" value="" class="{{ $errors->has('animal_id') ? 'borde-rojo-error' : '' }}">
             <option value="">--------- Elige un animal --------</option>
             @foreach ($animals as $oneAnimal)
-              <option value="{{ $oneAnimal->id }}" {{ $product->animal_id == $oneAnimal->id ? 'selected' : '' }}>{{ $oneAnimal->name }}</option>
+              <option value="{{ $oneAnimal->id }}"
+                @if (!$errors->has('animal_id'))
+                  @if (old('animal_id'))
+                    {{ old('animal_id') == $oneAnimal->id ? 'selected' : '' }}
+                  @else
+                  {{ $product->animal_id == $oneAnimal->id ? 'selected' : '' }}
+                  @endif
+                @endif
+              >{{ $oneAnimal->name }}</option>
             @endforeach
           </select>
           <br>
