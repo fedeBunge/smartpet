@@ -109,6 +109,12 @@ class productsController extends Controller
       }
     }
 
+    public function findProduct(Request $request){
+
+      $find = $request->input('search');
+      $prodructsFind = Product::where('name', 'like', '%'. $find .'%')->paginate(10);
+      return view('products.list.listFindProduct')->with(compact('prodructsFind','find'));
+    }
 
     /**
      * Show the form for editing the specified resource.

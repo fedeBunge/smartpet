@@ -71,12 +71,13 @@ background-color: white;
 margin-top: 2.5vw;
 }
 
-.producto_grilla:hover{
+.producto_grilla:hover, .producto:hover {
 transform: scale(1.05,1.1);
 box-shadow: 2px 2px 10px #D3D3D2;
 transition-property: all;
 transition-duration: 0.3s;
 transition-timing-function: ease-in;
+cursor: pointer;
 }
 
 

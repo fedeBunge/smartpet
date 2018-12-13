@@ -20,3 +20,5 @@ Route::resource('/products', 'ProductsController');
 
 Route::get('/listByCategory/{id}','productsController@listCategoryById'); // Lista por category_id
 Route::get('/listByAnimal/{id}','productsController@listAnimalById'); // Lista por animal_id
+Route::match(['get', 'post'], '/findProduct', 'productsController@findProduct')->name('product.finder');
+// route::get('/findProduct', 'productsController@findProduct');
