@@ -3,15 +3,28 @@
 @section('title', 'Detalle del Producto')
 
 @section('content')
+
 	<h2>{{ $product->name }}</h2>
+	<div class="container-fluid">
 	<table class="table">
 		<tr>
 			<td>Imagen</td>
+			<td>Nombre</td>
 			<td>Precio</td>
 			<td>Categoria</td>
 			<td>Descripción</td>
 	  </tr>
+
+		<tr>
+			<td><img src="{{$product->image}}" alt="" class=""></td>
+			<td>{{ $product->name }}</td>
+			<td>{{$product->price}}</td>
+			<td>{{$product->category->name}}</td>
+			<td>{{$product->description}}</td>
+		</tr>
+
 	</table>
+</div>
 	<a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning">Edit</a>
 	{{-- <a href="/products/{{ $product->id }}/edit" class="btn btn-warning">Edit</a> --}}
 

@@ -68,7 +68,7 @@ class ProductsController extends Controller
     {
       $product = Product::find($id);
 
-      return view('products.list.listDetail')->with(compact('product', 'categories', 'brands', 'animals'));
+      return view('products.list.listDetail')->with(compact('product'));
 
     }
 

@@ -16,7 +16,7 @@
   {{-- @dd($productsAnimal->first()->animal_id) --}}
   <div class="container_productos">
     @forelse ($productsAnimal as $oneProduct)
-      <ul class="producto" onclick="window.location='/'" >
+      <ul class="producto" >
         @if (substr($oneProduct->image, 0, 4) == 'http')
           <li><a href="{{ route('listDetail.show', $oneProduct->id) }}"><img src="{{$oneProduct->image}}" alt="" class=""></a></li>
         @else
