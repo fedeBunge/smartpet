@@ -18,12 +18,12 @@
     @forelse ($productsCategory as $oneProduct)
       <ul class="producto" onclick="window.location='/'">
         @if (substr($oneProduct->image, 0, 4) == 'http')
-          <li><a href="#"><img src="{{$oneProduct->image}}" alt="" class=""></a></li>
+          <li><a href="{{ route('listDetail.show', $oneProduct->id) }}"><img src="{{$oneProduct->image}}" alt="" class=""></a></li>
         @else
-          <li><a href="#"><img src="/storage/products/{{$oneProduct->image}}" alt="" class=""></a></li>
+          <li><a href="{{ route('listDetail.show', $oneProduct->id) }}"><img src="/storage/products/{{$oneProduct->image}}" alt="" class=""></a></li>
         @endif
-        <li><a href="#"><h4>{{$oneProduct->name}}</h4></a></li>
-        <li><a href="#"><h4>${{$oneProduct->price}}</h4></a></li>
+        <li><a href="{{ route('listDetail.show', $oneProduct->id) }}"><h4>{{$oneProduct->name}}</h4></a></li>
+        <li><a href="{{ route('listDetail.show', $oneProduct->id) }}"><h4>${{$oneProduct->price}}</h4></a></li>
       </ul>
     @empty
       <h2>No hemos encontrado lo estas buscando</h2>

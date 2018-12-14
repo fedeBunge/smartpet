@@ -22,7 +22,7 @@ class ProductsController extends Controller
     public function index()
     {
       $products = Product::all();
-      return view('products.index')->with('products');
+      return view('products.index')->with('product', 'categories', 'brands', 'animals');
     }
 
     /**
@@ -66,6 +66,9 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
+      $product = Product::find($id);
+
+      return view('products.list.listDetail')->with(compact('product', 'categories', 'brands', 'animals'));
 
     }
 

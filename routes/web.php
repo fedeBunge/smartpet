@@ -22,3 +22,4 @@ Route::get('/listByCategory/{id}','productsController@listCategoryById'); // Lis
 Route::get('/listByAnimal/{id}','productsController@listAnimalById'); // Lista por animal_id
 Route::match(['get', 'post'], '/findProduct', 'productsController@findProduct')->name('product.finder');
 // route::get('/findProduct', 'productsController@findProduct');
+Route::get('/listDetail/{id}', 'ProductsController@show')->name('listDetail.show'); // Detalle de producto
