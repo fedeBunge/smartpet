@@ -87,8 +87,12 @@
       <div class="registro-nombre-y-campo">
         <label for="image" class="registro-nombre">Imagen:</label>
         <div class="registro-campo">
-          <input type="text" name="image" value="{{ old('image') }}" class="{{ $errors->has('image') ? 'borde-rojo-error' : '' }}">
+          <input type="file" name="image" value="" class="{{ $errors->has('image') ? 'borde-rojo-error' : '' }}" accept=".jpg, .jpeg, .png, .bmp, .gif, .svg">
           <br>
+          <div class="registro-leyenda-archivo">
+            <span class="registro-leyenda-archivo-formatos">Formatos: jpg, jpeg, png, bmp, gif, svg</span>
+            <span class="registro-leyenda-archivo-tamaño">Tamaño máximo: 2MB</span>
+          </div>
           <span class="registro-error">{{ $errors->has('image') ? $errors->first('image') : '' }}</span>
         </div>
       </div>
@@ -96,7 +100,7 @@
     </div>
 
     <div class="registro-buttons">
-      <button class="registro-button confirm-button" type="submit">Crear producto</button>
+      <button class="registro-button confirm-button" type="submit">Crear</button>
       <button class="registro-button cancel-button" type="">Cancelar</button>
     </div>
 

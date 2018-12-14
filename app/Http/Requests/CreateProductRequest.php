@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ProductRequest extends FormRequest
+class CreateProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,26 +24,28 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         return [
-          'name' => 'required | string | max: 150',
+          'name' => 'required | string | max:150',
     			'price' => 'required | numeric | min:10 | max:999999.99',
           'brand_id' => 'required | integer',
     			'category_id' => 'required | integer',
           'animal_id' => 'required | integer',
           'description' => 'required | string | max:500',
-          'image' => 'required | string'
+          'image' => 'required | image | max:2048'
         ];
     }
 
     public function messages()
     {
         return [
-          'required' => 'Este campo es obligatorio',
-          'integer' => 'La opción elegida no es válida',
+          'required' => 'Campo obligatorio',
   			  'name.max' => 'Máximo: 150 caracteres',
-    			'price.numeric' => 'El campo precio solo admite números',
-    			'price.min' => 'El precio mínimo es 10',
-    			'price.max' => 'El precio máximo es 999999.99',
+    			'price.numeric' => 'Ingresa solo números',
+    			'price.min' => 'Precio mínimo: 10',
+    			'price.max' => 'Precio máximo: 999999.99',
+          'integer' => 'Opción inválida',
           'description.max' => 'Máximo: 500 caracteres',
+          'image' => 'Formato inválido',
+          'image.max' => 'Tamaño máximo: 2MB'
         ];
     }
 }

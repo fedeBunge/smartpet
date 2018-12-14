@@ -111,25 +111,29 @@
       <div class="registro-nombre-y-campo">
         <label for="description" class="registro-nombre descripcion-producto">Descripción:</label>
         <div class="registro-campo">
-          <textarea name="description" rows="5" class="text-area-crear-editar-productos {{ $errors->has('description') ? 'borde-rojo-error' : '' }}">{{ old('description', $product->description) }}</textarea>
+                  <textarea name="description" rows="5" class="text-area-crear-editar-productos {{ $errors->has('description') ? 'borde-rojo-error' : '' }}">{{ old('description', $product->description) }}</textarea>
           <br>
           <span class="registro-error">{{ $errors->has('description') ? $errors->first('description') : '' }}</span>
         </div>
       </div>
 
       <div class="registro-nombre-y-campo">
-        <label for="image" class="registro-nombre">Nueva imagen:</label>
+        <label for="changeImage" class="registro-nombre">Nueva imagen:</label>
         <div class="registro-campo">
-          <input type="text" name="image" value="{{ old('image', $product->image) }}" class="{{ $errors->has('image') ? 'borde-rojo-error' : '' }}">
+          <input type="file" name="changeImage" value="" class="{{ $errors->has('changeImage') ? 'borde-rojo-error' : '' }}" accept=".jpg, .jpeg, .png, .bmp, .gif, .svg">
           <br>
-          <span class="registro-error">{{ $errors->has('image') ? $errors->first('image') : '' }}</span>
+          <div class="registro-leyenda-archivo">
+            <span class="registro-leyenda-archivo-formatos">Formatos: jpg, jpeg, png, bmp, gif, svg</span>
+            <span class="registro-leyenda-archivo-tamaño">Tamaño máximo: 2MB</span>
+          </div>
+          <span class="registro-error">{{ $errors->has('changeImage') ? $errors->first('changeImage') : '' }}</span>
         </div>
       </div>
 
     </div>
 
     <div class="registro-buttons">
-      <button class="registro-button confirm-button" type="submit">Guardar cambios</button>
+      <button class="registro-button confirm-button" type="submit">Guardar</button>
       <button class="registro-button cancel-button" type="">Cancelar</button>
     </div>
 

@@ -3,15 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateProductRequest;
+use App\Http\Requests\EditProductRequest;
 use App\Product;
 use App\Category;
 use App\Brand;
 use App\Animal;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ProductRequest;
 
-class productsController extends Controller
+class ProductsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -44,14 +45,16 @@ class productsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ProductRequest $request)
+    public function store(CreateProductRequest $request)
     {
 
-      $newProduct = Product::create($request->all());
+      $product = new Product;
 
-      echo "<h1>Producto creado exitosamente</h1>";
+      self::saveProductValues($request, $product);
 
-      dd($newProduct);
+      echo "<h1>Producto CREADO exitosamente</h1>";
+
+      dd($product);
 
     }
 
@@ -122,22 +125,14 @@ class productsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ProductRequest $request, $id)
+    public function update(EditProductRequest $request, $id)
     {
 
       $product = Product::find($id);
 
-  		$product->name = $request->input('name');
-      $product->price = $request->input('price');
-      $product->brand_id = $request->input('brand_id');
-      $product->category_id = $request->input('category_id');
-      $product->animal_id = $request->input('animal_id');
-      $product->description = $request->input('description');
-      $product->image = $request->input('image');
+      self::saveProductValues($request, $product);
 
-  		$product->save();
-
-      echo "<h1>Producto editado exitosamente</h1>";
+      echo "<h1>Producto EDITADO exitosamente</h1>";
 
       dd($product);
 
@@ -153,4 +148,28 @@ class productsController extends Controller
     {
         //
     }
+
+    public function saveProductValues($request, $product)
+    {
+      $product->name = $request->input('name');
+      $product->price = $request->input('price');
+      $product->brand_id = $request->input('brand_id');
+      $product->category_id = $request->input('category_id');
+      $product->animal_id = $request->input('animal_id');
+      $product->description = $request->input('description');
+
+      if ($request->file('image') || $request->file('changeImage')) {
+        if ($request->file('image')) {
+          $image = $request->file('image');
+        } else if ($request->file('changeImage')) {
+          $image = $request->file('changeImage');
+        }
+        $fileName = uniqid('product_') . "." . $image->extension();
+        $image->storePubliclyAs('public/products', $fileName);
+        $product->image = $fileName;
+      }
+
+      $product->save();
+    }
+
 }
