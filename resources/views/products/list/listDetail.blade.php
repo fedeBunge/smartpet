@@ -10,7 +10,7 @@
 		<tr>
 			<td>Imagen</td>
 			<td>Nombre</td>
-			<td>Precio</td>
+			<td>Precio $</td>
 			<td>Categoria</td>
 			<td>Descripción</td>
 	  </tr>
@@ -25,13 +25,16 @@
 
 	</table>
 </div>
-	<a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning">Edit</a>
+	<a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning" style="width: 78px;">Edit</a>
 	{{-- <a href="/products/{{ $product->id }}/edit" class="btn btn-warning">Edit</a> --}}
 
-	<form action="/products/{{ $product->id }}" method="post" style="display: inline-block;">
+	<form action="/products/{{ $product->id }}" method="post" style="display: inline-block;" style="width: 78px;"">
 		@csrf
 		{{ method_field('DELETE') }}
 		<button id="delete" type="submit" class="btn btn-danger">Delete</button>
 	</form>
+
+	<a href="{{ URL::previous() }}" class="btn btn-primary" style="float:right;" style="width: 78px;">Volver</a>
+
 
   @endsection

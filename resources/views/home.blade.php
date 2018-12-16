@@ -54,14 +54,14 @@
     <h2 class="titular">Ofertas del día</h2>
     <div class="container-fluid container_productos_grilla">
       @foreach ($ofertas as $oneProduct)
-        <div class="producto_grilla">
+        <div class="producto_grilla" onclick="window.location='{{ route('listDetail.show', $oneProduct->id) }}'">
           @if (substr($oneProduct->image, 0, 4) == 'http')
             <img src="{{ $oneProduct->image }}" alt="" width="400">
           @else
             <img src="/storage/products/{{ $oneProduct->image }}" alt="" width="400">
           @endif
           <h3>{{ $oneProduct->name }}</h3>
-          <h4>{{ $oneProduct->price }}</h4>
+          <h3>$ {{ $oneProduct->price }}</h3>
         </div>
       @endforeach
     </div>
@@ -75,33 +75,19 @@
     <h2 class="titular">Más recientes</h2>
     <div class="container-fluid container_productos_grilla">
       @foreach ($recientes as $oneProduct)
-        <div class="producto_grilla">
+        <div class="producto_grilla" onclick="window.location='{{ route('listDetail.show', $oneProduct->id) }}'">
           @if (substr($oneProduct->image, 0, 4) == 'http')
             <img src="{{ $oneProduct->image }}" alt="Imagen producto">
           @else
             <img src="/storage/products/{{ $oneProduct->image }}" alt="Imagen producto">
           @endif
           <h3>{{ $oneProduct->name }}</h3>
-          <h4>{{ $oneProduct->price }}</h4>
+          <h3>$ {{ $oneProduct->price }}</h3>
         </div>
       @endforeach
     </div>
   </section>
 
   <!-- Bootstrap Product Container END -->
-
-  <!-- Bootstrap listado de Productos START -->
-
-  {{-- <h2>Listado de productos</h2>
-	<table class="table">
-		<tr>
-			<td>Nombre</td>
-			<td>Precio</td>
-			<td>Imagen</td>
-			<td>Category</td>
-			<td>Brand</td>
-		</tr> --}}
-
-  <!-- Bootstrap listado de Productos END -->
 
 @endsection
