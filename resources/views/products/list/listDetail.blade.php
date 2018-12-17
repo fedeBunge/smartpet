@@ -16,7 +16,11 @@
 	  </tr>
 
 		<tr>
-			<td><img src="{{$product->image}}" alt="" class=""></td>
+			@if (substr($product->image, 0, 4) == 'http')
+				<td><img src="{{$product->image}}" width="320" alt="" class=""></td>
+			@else
+				<td><img src="/storage/products/{{$product->image}}" width="320" alt="" class=""></td>
+			@endif
 			<td>{{ $product->name }}</td>
 			<td>{{$product->price}}</td>
 			<td>{{$product->category->name}}</td>
@@ -28,7 +32,7 @@
 	<a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning" style="width: 78px;">Edit</a>
 	{{-- <a href="/products/{{ $product->id }}/edit" class="btn btn-warning">Edit</a> --}}
 
-	<form action="/products/{{ $product->id }}" method="post" style="display: inline-block;" style="width: 78px;"">
+	<form action="/products/{{ $product->id }}" method="post" style="display: inline-block;" style="width: 78px;">
 		@csrf
 		{{ method_field('DELETE') }}
 		<button id="delete" type="submit" class="btn btn-danger">Delete</button>

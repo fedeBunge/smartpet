@@ -52,9 +52,7 @@ class ProductsController extends Controller
 
       self::saveProductValues($request, $product);
 
-      echo "<h1>Producto CREADO exitosamente</h1>";
-
-      dd($product);
+      return redirect('/listDetail/'.$product->id);
 
     }
 
@@ -130,15 +128,11 @@ class ProductsController extends Controller
      */
     public function update(EditProductRequest $request, $id)
     {
-
       $product = Product::find($id);
 
       self::saveProductValues($request, $product);
 
-      echo "<h1>Producto EDITADO exitosamente</h1>";
-
-      dd($product);
-
+      return redirect('/listDetail/'.$product->id);
     }
 
     /**
