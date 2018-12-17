@@ -11,6 +11,8 @@ use App\Brand;
 use App\Animal;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+
 
 class ProductsController extends Controller
 {
@@ -167,6 +169,18 @@ class ProductsController extends Controller
       }
 
       $product->save();
+    }
+
+    public function __construct()
+    {
+      if (Auth::check()) {
+
+        $this->middleware('auth');
+
+      } else {
+
+      }
+
     }
 
 }
