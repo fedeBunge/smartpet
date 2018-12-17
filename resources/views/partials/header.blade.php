@@ -30,21 +30,30 @@
     <ul class="menu-mobile" style="display:none">
 
       <div class="barra-usuario-mobile">
-        {{-- if (!$auth->estaLogueado()) {
-          <li class="con-fondo"><a href="login.php">Login</a></li>
-          <li class="con-fondo"><a href="registro.php">Registro</a></li>
-        } else { --}}
+        @guest
+          <li class="con-fondo"><a href="/login">Login</a></li>
+          <li class="con-fondo"><a href="/register">Registro</a></li>
+        @else
           <li class="usuario-logueado-mobile">
-            <img class="avatar-usuario-mobile" src="/storage/avatars/default-usuario.png" alt="avatar">
-            <span class="nombre-usuario">UsuarioDemo</span>
+            <img class="avatar-usuario-mobile" src="/storage/avatars/{{ Auth::user()->avatar }}" alt="avatar">
+            <span class="nombre-usuario">{{ Auth::user()->nickname }}</span>
             <img class="flecha-izquierda-usu-mobile" src="/images/flecha-izquierda-blanca.png" alt="">
             <img class="cruz-usu-mobile hidden" src="/images/cruz-blanca.png" alt="">
           </li>
           <ul class="menu-usuario-logueado-mobile" style="display:none">
-            <li><a href="#">Mi perfil</a></li>
-            <li><a href="#">Salir</a></li>
+            <li><a href="/profile">Mi perfil</a></li>
+            @if (Auth::user()->admin)
+              <li><a href="/products/create">Crear producto</a></li>
+            @endif
+            <li><a href="/logout"
+              onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();">Salir</a>
+            </li>
+            <form id="logout-form" action="/logout" method="POST" style="display: none;">
+                @csrf
+            </form>
           </ul>
-        {{-- } --}}
+        @endguest
       </div>
 
       <div class="barra-categorias-mobile">
@@ -109,21 +118,30 @@
     </ul>
 
     <ul class="barra-usuario">
-      {{-- if (!$auth->estaLogueado()) {
-        <li class="menu-login-registro"><a href="login.php">Login</a></li>
-        <li class="menu-login-registro"><a href="registro.php">Registro</a></li>
-      } else { --}}
+      @guest
+        <li class="menu-login-registro"><a href="/login">Login</a></li>
+        <li class="menu-login-registro"><a href="/register">Registro</a></li>
+      @else
         <li class="usuario-logueado">
-          <img class="avatar-usuario" src="/storage/avatars/default-usuario.png" alt="avatar">
-          <span class="nombre-usuario">UsuarioDemo</span>
+          <img class="avatar-usuario" src="/storage/avatars/{{ Auth::user()->avatar }}" alt="avatar">
+          <span class="nombre-usuario">{{ Auth::user()->nickname }}</span>
           <img class="flecha-abajo-usu" src="/images/flecha-abajo-blanca.png" alt="">
           <img class="cruz-usu hidden" src="/images/cruz-blanca.png" alt="">
         </li>
         <ul class="menu-usuario-logueado" style="display:none">
-          <li><a href="#">Mi perfil</a></li>
-          <li><a href="#">Salir</a></li>
+          <li><a href="/profile">Mi perfil</a></li>
+          @if (Auth::user()->admin)
+            <li><a href="/products/create">Crear producto</a></li>
+          @endif
+          <li><a href="/logout"
+            onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();">Salir</a>
+          </li>
+          <form id="logout-form" action="/logout" method="POST" style="display: none;">
+              @csrf
+          </form>
         </ul>
-      {{-- } --}}
+      @endguest
 
       <a class="link-carrito" href="#"><img class="carrito" src="/images/carrito-blanco.png" alt="carrito"></a>
 

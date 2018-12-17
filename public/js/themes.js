@@ -16,7 +16,7 @@ now.setTime(time);
       {
         if (nameValueArray[1] == "navidad")
         {
-          document.getElementById('theme').href = 'css/paletaColoresNavidad.css';
+          document.getElementById('theme').href = '/css/styles/paletaColoresNavidad.css';
         }
       }
     }

@@ -4,7 +4,7 @@
 
 @section('content')
 
-  <hr>
+  {{-- <hr> --}}
 
   <!-- Bootstrap FAQ - START -->
 

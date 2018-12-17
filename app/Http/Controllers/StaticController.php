@@ -16,6 +16,11 @@ class StaticController extends Controller
         return view('faq');
     }
 
+    public function indexProfile()
+    {
+        return view('profile');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

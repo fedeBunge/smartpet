@@ -14,6 +14,7 @@
 Route::get('/', 'HomeController@index');
 
 Route::get('/faq', 'StaticController@indexFAQ');
+Route::get('/profile', 'StaticController@indexProfile');
 
 Route::get('/products/api', 'ProductsController@api');
 Route::resource('/products', 'ProductsController');
@@ -23,3 +24,7 @@ Route::get('/listByAnimal/{id}','productsController@listAnimalById'); // Lista p
 Route::match(['get', 'post'], '/findProduct', 'productsController@findProduct')->name('product.finder');
 // route::get('/findProduct', 'productsController@findProduct');
 Route::get('/listDetail/{id}', 'ProductsController@show')->name('listDetail.show'); // Detalle de producto
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
