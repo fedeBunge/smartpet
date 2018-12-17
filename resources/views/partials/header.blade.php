@@ -35,7 +35,7 @@
           <li class="con-fondo"><a href="registro.php">Registro</a></li>
         } else { --}}
           <li class="usuario-logueado-mobile">
-            <img class="avatar-usuario-mobile" src="/storage/avatars/avatardemo.png" alt="avatar">
+            <img class="avatar-usuario-mobile" src="/storage/avatars/default-usuario.png" alt="avatar">
             <span class="nombre-usuario">UsuarioDemo</span>
             <img class="flecha-izquierda-usu-mobile" src="/images/flecha-izquierda-blanca.png" alt="">
             <img class="cruz-usu-mobile hidden" src="/images/cruz-blanca.png" alt="">
@@ -114,7 +114,7 @@
         <li class="menu-login-registro"><a href="registro.php">Registro</a></li>
       } else { --}}
         <li class="usuario-logueado">
-          <img class="avatar-usuario" src="/storage/avatars/avatardemo.png" alt="avatar">
+          <img class="avatar-usuario" src="/storage/avatars/default-usuario.png" alt="avatar">
           <span class="nombre-usuario">UsuarioDemo</span>
           <img class="flecha-abajo-usu" src="/images/flecha-abajo-blanca.png" alt="">
           <img class="cruz-usu hidden" src="/images/cruz-blanca.png" alt="">
