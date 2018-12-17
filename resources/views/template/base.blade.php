@@ -6,6 +6,7 @@
     <title>@yield('title')</title>
     <link rel="icon" href="/images/logo.png">
     <link rel="stylesheet" href={{ asset('/css/bootstrap.min.css') }}>
+    <link rel="stylesheet" href={{ asset('/css/styles/paletaColores.css') }} id="theme">
     <link rel="stylesheet" href={{ asset('/css/styles.css') }}>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
   </head>
@@ -23,6 +24,7 @@
     <script src={{ asset('/js/jquery-3.3.1.min.js') }}></script>
     <script src={{ asset('/js/bootstrap.min.js') }}></script>
     <script src={{ asset('/js/header.js') }}></script>
+    <script src={{ asset('/js/themes.js') }}></script>
     @yield('other-scripts')
 
   </body>

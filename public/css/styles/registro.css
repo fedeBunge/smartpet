@@ -6,7 +6,7 @@
   width: 80%;
   max-width: 450px;
   padding: 10px;
-  background-color: #2C3E50;
+  background-color: var(--colorPrimario);
   text-align: center;
 }
 
@@ -46,8 +46,9 @@
   background-color: white;
   font-size: 15px;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: center;
+  align-items: center;
 }
 
 .registro-container-campos {
@@ -76,8 +77,16 @@
   margin: 5px;
 }
 
-.olvide-y-recordar {
-  width: 250px;
+.registro-recordar {
+  width: 100%;
+  margin-bottom: 7px;
+  text-align: center;
+}
+
+.registro-olvide {
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 2px;
   text-align: center;
 }
 
@@ -105,7 +114,13 @@
 
 .registro-error {
   font-size: 10px;
-  color: red;
+  color: var(--colorPrimario);
+  margin: 0;
+}
+
+.registro-error-js {
+  font-size: 10px;
+  color: orange;
   margin: 0;
 }
 
@@ -118,7 +133,7 @@
 }
 
 .registro-button {
-  margin-top: 15px;
+  margin-top: 10px;
   border-radius: 5px;
   border: solid 1px black;
   padding: 8px 20px;

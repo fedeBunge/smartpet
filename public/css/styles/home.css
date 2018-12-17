@@ -4,7 +4,7 @@
   width: 60%;
   padding: 15px;
   color: #FFFFFF;
-  background-color: #18BC9C;
+  background-color: var(--colorPrimario);
   text-align: center;
   font-size: 25px;
 }

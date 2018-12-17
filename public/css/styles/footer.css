@@ -50,7 +50,7 @@ footer {
 
 
 .franja-superior {
-  background-color: #2C3E50;
+  background-color: var(--colorPrimario);
   width: 100%;
 }
 
@@ -93,7 +93,7 @@ footer {
 
 
 .franja-inferior {
-  background-color: #1A252F;
+  background-color: var(--colorSecundario);
   width: 100%;
 }
 

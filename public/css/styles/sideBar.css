@@ -3,7 +3,7 @@
   float: left;
   max-width: 200px;
   height: 400px;
-  background-color:  #2C3E50;  /* Verde: #18BC9C Amarillo: #F7EF80 AmarilloML:#fff159 Naranja: #f60  Gris: #EAE8E8 */
+  background-color: var(--colorPrimario);  /* Verde: #18BC9C Amarillo: #F7EF80 AmarilloML:#fff159 Naranja: #f60  Gris: #EAE8E8 */
   margin-bottom: 20px;
   padding: 50px;
   margin-top: 100px;

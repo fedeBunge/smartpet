@@ -1,63 +1,57 @@
 
 .seccion_productos{
-margin:auto;
-padding: 5vw;
-
+  margin:auto;
+  padding: 5vw;
 }
 
 .container_productos{
-margin: auto;
-display: flex;
-flex-wrap: wrap;
-justify-content:space-around;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
 }
 
 .container_buttons{
-
-margin: auto;
-display: flex;
-flex-wrap: wrap;
-flex-direction: row;
-justify-content:center;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content:center;
 }
 
-/*conteiner_productos_grilla en grilla */
+/*container_productos_grilla en grilla */
 .container_productos_grilla{
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content:space-around;
 }
-/* fin conteiner_productos_grilla en grilla*/
-
+/* fin container_productos_grilla en grilla*/
 
 .producto{
-background-color: white;
-margin-top: 2.5vw;
+  background-color: white;
+  margin-top: 2.5vw;
 }
 
 .producto:hover{
-transform: scale(1.05,1.1);
-box-shadow: 2px 2px 10px #D3D3D2;
-transition-property: all;
-transition-duration: 0.3s;
-transition-timing-function: ease-in;
+  transform: scale(1.05,1.1);
+  box-shadow: 2px 2px 10px #D3D3D2;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in;
 }
 
-
 .producto img{
-width: 250px;
-padding: 1vw;
-
+  width: 250px;
+  padding: 1vw;
 }
 
 .producto h3, .producto h4 {
-color: #333;
-font-family: sans-serif;
-text-align: center;
-font-size: 24px;
-padding: 1vw;
-
+  color: #333;
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 24px;
+  padding: 1vw;
 }
 
 .producto a {
@@ -67,33 +61,30 @@ padding: 1vw;
 /*producto_grilla en grilla */
 
 .producto_grilla{
-background-color: white;
-margin-top: 2.5vw;
+  background-color: white;
+  margin-top: 2.5vw;
 }
 
 .producto_grilla:hover, .producto:hover {
-transform: scale(1.05,1.1);
-box-shadow: 2px 2px 10px #D3D3D2;
-transition-property: all;
-transition-duration: 0.3s;
-transition-timing-function: ease-in;
-cursor: pointer;
+  transform: scale(1.05,1.1);
+  box-shadow: 2px 2px 10px #D3D3D2;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in;
+  cursor: pointer;
 }
 
-
 .producto_grilla img{
-width: 250px;
-padding: 1vw;
-
+  width: 250px;
+  padding: 1vw;
 }
 
 .producto_grilla h3, .producto_grilla h4 {
-color: #333;
-font-family: sans-serif;
-text-align: center;
-font-size: 24px;
-padding: 1vw;
-
+  color: #333;
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 24px;
+  padding: 1vw;
 }
 
 .producto_grilla a {
@@ -105,9 +96,8 @@ padding: 1vw;
 @media (min-width: 780px) {
 
   .container_productos{
-  flex-direction: column;
+    flex-direction: column;
   }
-
 
   .producto{
     display: flex;
@@ -115,8 +105,6 @@ padding: 1vw;
     flex-direction: row;
     align-items: baseline;
     justify-content:space-around;
-
-
   }
 
 }
