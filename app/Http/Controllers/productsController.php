@@ -68,6 +68,10 @@ class ProductsController extends Controller
     {
       $product = Product::find($id);
 
+      if (!$product->active) {
+        return redirect('/home');
+      }
+
       return view('products.list.listDetail')->with(compact('product'));
 
     }
@@ -76,7 +80,7 @@ class ProductsController extends Controller
     {
       if ($category= Category::find($id)) {
         //$productsCategory=  DB::table('products')->where('category_id','=',$id)->skip(0)->take(5)->get();
-        $productsCategory= Product::where('category_id', '=', $id)->paginate(10);
+        $productsCategory= Product::where('category_id', '=', $id)->where('active', '=', '1')->paginate(10);
         return view('products.list.listByCategory')->with(compact('productsCategory','category'));
       }else {
         return('<h1>Categoria inexistente</h1>');
@@ -89,7 +93,7 @@ class ProductsController extends Controller
     {
       if ($animal= Animal::find($id)) {
         //$productsCategory=  DB::table('products')->where('category_id','=',$id)->skip(0)->take(5)->get();
-        $productsAnimal= Product::where('animal_id', '=', $id)->paginate(10);
+        $productsAnimal= Product::where('animal_id', '=', $id)->where('active', '=', '1')->paginate(10);
 
         return view('products.list.listByAnimal')->with(compact('productsAnimal','animal'));
       }else {
@@ -100,7 +104,7 @@ class ProductsController extends Controller
     public function findProduct(Request $request){
 
       $find = $request->input('search');
-      $prodructsFind = Product::where('name', 'like', '%'. $find .'%')->paginate(10);
+      $prodructsFind = Product::where('name', 'like', '%'. $find .'%')->where('active', '=', '1')->paginate(10);
       return view('products.list.listFindProduct')->with(compact('prodructsFind','find'));
     }
 
@@ -113,6 +117,10 @@ class ProductsController extends Controller
     public function edit($id)
     {
       $product = Product::find($id);
+
+      if (!$product->active) {
+        return redirect('/home');
+      }
 
       $categories = Category::all();
       $brands = Brand::all();

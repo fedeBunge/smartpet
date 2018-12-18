@@ -26,8 +26,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $ofertas = Product::orderBy('price')->limit(8)->get();
-        $recientes = Product::orderBy('created_at', 'desc')->limit(8)->get();
+        $ofertas = Product::where('active', '=', '1')->orderBy('price')->limit(8)->get();
+        $recientes = Product::where('active', '=', '1')->orderBy('created_at', 'desc')->limit(8)->get();
 
         return view('home')->with(compact('ofertas', 'recientes'));
     }
