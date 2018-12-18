@@ -46,7 +46,7 @@
   padding: 1vw;
 }
 
-.producto h3, .producto h4 {
+.producto h3, .producto h4, .producto h5, .producto h6 {
   color: #333;
   font-family: sans-serif;
   text-align: center;
@@ -77,13 +77,14 @@
 .producto_grilla img{
   width: 250px;
   padding: 1vw;
+  margin: auto;
 }
 
-.producto_grilla h3, .producto_grilla h4 {
+.producto_grilla h3, .producto_grilla h4, .producto_grilla h5, .producto_grilla h6 {
   color: #333;
   font-family: sans-serif;
   text-align: center;
-  font-size: 24px;
+  font-size: 20px;
   padding: 1vw;
 }
 
