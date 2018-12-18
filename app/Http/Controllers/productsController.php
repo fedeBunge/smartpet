@@ -145,7 +145,10 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $product = Product::find($id);
+      $product->active = '0';
+      $product->save();
+      return redirect('/');
     }
 
     public function saveProductValues($request, $product)

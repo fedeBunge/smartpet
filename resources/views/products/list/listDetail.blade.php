@@ -5,7 +5,7 @@
 @section('content')
 
 <h2>{{ $product->name }}</h2>
-<div class="container-fluid">
+<div class="table-responsive-sm">
 	<table class="table">
 		<tr>
 			<td>Imagen</td>
@@ -18,9 +18,9 @@
 
 		<tr>
 			@if (substr($product->image, 0, 4) == 'http')
-				<td><img src="{{$product->image}}" width="320" alt="" class=""></td>
+				<td><img src="{{$product->image}}" width="250" alt="" class=""></td>
 			@else
-				<td><img src="/storage/products/{{$product->image}}" width="320" alt="" class=""></td>
+				<td><img src="/storage/products/{{$product->image}}" width="250" alt="" class=""></td>
 			@endif
 			<td>{{ $product->name }}</td>
 			<td>{{$product->price}}</td>
