@@ -17,7 +17,7 @@
     @forelse ($prodructsFind as $oneProduct)
       <ul class="producto" onclick="window.location='/listDetail/{{$oneProduct->id}}'">
         @if (substr($oneProduct->image, 0, 4) == 'http')
-          <li><a href="#"><img src="{{$oneProduct->image}}" alt="" class=""></a></li>
+          <li><a href="#"><img src="{{$oneProduct->image}}" alt="" class="img_product"></a></li>
         @else
           <li><a href="#"><img src="/storage/products/{{$oneProduct->image}}" alt="" class=""></a></li>
         @endif

@@ -58,10 +58,10 @@
           @if (substr($oneProduct->image, 0, 4) == 'http')
             <img src="{{ $oneProduct->image }}" alt="" width="400">
           @else
-            <img src="/storage/products/{{ $oneProduct->image }}" alt="" width="400">
+            <img src="/storage/products/{{ $oneProduct->image }}" alt="" width="250">
           @endif
-          <h3>{{ $oneProduct->name }}</h3>
-          <h3>$ {{ $oneProduct->price }}</h3>
+          <h4>{{ $oneProduct->name }}</h4>
+          <h5>$ {{ $oneProduct->price }}</h5>
         </div>
       @endforeach
     </div>
@@ -81,8 +81,8 @@
           @else
             <img src="/storage/products/{{ $oneProduct->image }}" alt="Imagen producto">
           @endif
-          <h3>{{ $oneProduct->name }}</h3>
-          <h3>$ {{ $oneProduct->price }}</h3>
+          <h4>{{ $oneProduct->name }}</h4>
+          <h5>$ {{ $oneProduct->price }}</h5>
         </div>
       @endforeach
     </div>
