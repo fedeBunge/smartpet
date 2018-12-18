@@ -1,9 +1,16 @@
-.registro-nombre {
+.producto-nombre {
   width: 25%;
+  margin: 5px;
 }
 
-.registro-campo {
+.producto-campo {
   width: 70%;
+  margin: 5px;
+}
+
+.producto-campo input {
+  padding: 5px;
+  width: 100%;
 }
 
 .descripcion-producto {
@@ -31,11 +38,11 @@
 
 @media (max-width: 600px) {
 
-  .registro-nombre {
+  .producto-nombre {
     width: 100%;
   }
 
-  .registro-campo {
+  .producto-campo {
     width: 95%;
   }
 

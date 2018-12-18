@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->string('image')->default('default-producto.png');
             $table->unsignedDecimal('price',8,2);
             $table->timestamps();
-            $table->unsignedInteger('active')->nullable();
+            $table->unsignedInteger('active')->default(1);
 
         });
     }

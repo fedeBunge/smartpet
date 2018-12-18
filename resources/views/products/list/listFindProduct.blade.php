@@ -7,7 +7,7 @@
 @endsection
 
 @section('category')
-  <h3>Estas buscando: {{$find}}</h3>
+  <h3>Estás buscando: "{{$find}}"</h3>
 @endsection
 
 @section('content')
@@ -25,7 +25,7 @@
         <li><a href="#"><h4>${{$oneProduct->price}}</h4></a></li>
       </ul>
     @empty
-      <h2>No hemos encontrado lo estas buscando</h2>
+      <h2>No hemos encontrado lo que estás buscando</h2>
     @endforelse
   </div>
   <br>

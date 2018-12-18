@@ -25,8 +25,8 @@
       </div>
 
       <div class="registro-nombre-y-campo">
-        <label for="name" class="registro-nombre">Título:</label>
-        <div class="registro-campo">
+        <label for="name" class="producto-nombre">Título:</label>
+        <div class="producto-campo">
           <input type="text" name="name" value="{{ old('name', $product->name) }}" class="{{ $errors->has('name') ? 'borde-rojo-error' : '' }}">
           <br>
           <span class="registro-error">{{ $errors->has('name') ? $errors->first('name') : '' }}</span>
@@ -34,8 +34,8 @@
       </div>
 
       <div class="registro-nombre-y-campo">
-        <label for="price" class="registro-nombre">Precio:</label>
-        <div class="registro-campo">
+        <label for="price" class="producto-nombre">Precio:</label>
+        <div class="producto-campo">
           <input type="text" name="price" value="{{ old('price', $product->price) }}" class="{{ $errors->has('price') ? 'borde-rojo-error' : '' }}">
           <br>
           <span class="registro-error">{{ $errors->has('price') ? $errors->first('price') : '' }}</span>
@@ -43,8 +43,8 @@
       </div>
 
       <div class="registro-nombre-y-campo">
-        <label for="brand_id" class="registro-nombre">Marca:</label>
-        <div class="registro-campo">
+        <label for="brand_id" class="producto-nombre">Marca:</label>
+        <div class="producto-campo">
           <select name="brand_id" value="" class="{{ $errors->has('brand_id') ? 'borde-rojo-error' : '' }}">
             <option value="">-------- Elige una marca --------</option>
             @foreach ($brands as $oneBrand)
@@ -65,8 +65,8 @@
       </div>
 
       <div class="registro-nombre-y-campo">
-        <label for="category_id" class="registro-nombre">Categoría:</label>
-        <div class="registro-campo">
+        <label for="category_id" class="producto-nombre">Categoría:</label>
+        <div class="producto-campo">
           <select name="category_id" value="" class="{{ $errors->has('category_id') ? 'borde-rojo-error' : '' }}">
             <option value="">------ Elige una categoría ------</option>
             @foreach ($categories as $oneCategory)
@@ -87,8 +87,8 @@
       </div>
 
       <div class="registro-nombre-y-campo">
-        <label for="animal_id" class="registro-nombre">Animal:</label>
-        <div class="registro-campo">
+        <label for="animal_id" class="producto-nombre">Animal:</label>
+        <div class="producto-campo">
           <select name="animal_id" value="" class="{{ $errors->has('animal_id') ? 'borde-rojo-error' : '' }}">
             <option value="">--------- Elige un animal --------</option>
             @foreach ($animals as $oneAnimal)
@@ -109,17 +109,17 @@
       </div>
 
       <div class="registro-nombre-y-campo">
-        <label for="description" class="registro-nombre descripcion-producto">Descripción:</label>
-        <div class="registro-campo">
-                  <textarea name="description" rows="5" class="text-area-crear-editar-productos {{ $errors->has('description') ? 'borde-rojo-error' : '' }}">{{ old('description', $product->description) }}</textarea>
+        <label for="description" class="producto-nombre descripcion-producto">Descripción:</label>
+        <div class="producto-campo">
+          <textarea name="description" rows="5" class="text-area-crear-editar-productos {{ $errors->has('description') ? 'borde-rojo-error' : '' }}">{{ old('description', $product->description) }}</textarea>
           <br>
           <span class="registro-error">{{ $errors->has('description') ? $errors->first('description') : '' }}</span>
         </div>
       </div>
 
       <div class="registro-nombre-y-campo">
-        <label for="changeImage" class="registro-nombre">Nueva imagen:</label>
-        <div class="registro-campo">
+        <label for="changeImage" class="producto-nombre">Nueva imagen:</label>
+        <div class="producto-campo">
           <input type="file" name="changeImage" value="" class="{{ $errors->has('changeImage') ? 'borde-rojo-error' : '' }}" accept=".jpg, .jpeg, .png, .bmp, .gif, .svg">
           <br>
           <div class="registro-leyenda-archivo">
