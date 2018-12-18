@@ -81,8 +81,8 @@
           @else
             <img src="/storage/products/{{ $oneProduct->image }}" alt="Imagen producto">
           @endif
-          <h3>{{ $oneProduct->name }}</h3>
-          <h4>$ {{ $oneProduct->price }}</h4>
+          <h4>{{ $oneProduct->name }}</h4>
+          <h5>$ {{ $oneProduct->price }}</h5>
         </div>
       @endforeach
     </div>
