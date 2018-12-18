@@ -114,7 +114,7 @@
 
 .registro-error {
   font-size: 10px;
-  color: var(--colorPrimario);
+  color: red;
   margin: 0;
 }
 

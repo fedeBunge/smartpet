@@ -41,11 +41,6 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function messages()
-    {
-        $this->middleware('guest')->except('logout');
-    }
-
     protected function validateLogin(Request $request)
     {
         $request->validate([
