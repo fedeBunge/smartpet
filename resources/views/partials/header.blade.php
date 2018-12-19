@@ -87,7 +87,7 @@
 
     <!-- Fin menú mobile -->
 
-    <a class="link-carrito-mobile" href="#"><img class="carrito" src="/images/carrito-blanco.png" alt="carrito"></a>
+    <a class="link-carrito-mobile" href="/carritoDeCompras"><img class="carrito" src="/images/carrito-blanco.png" alt="carrito"></a>
 
   </nav>
 
@@ -143,7 +143,7 @@
         </ul>
       @endguest
 
-      <a class="link-carrito" href="#"><img class="carrito" src="/images/carrito-blanco.png" alt="carrito"></a>
+      <a class="link-carrito"  href="/carritoDeCompras"><img class="carrito" src="/images/carrito-blanco.png" alt="carrito"></a>
 
     </ul>
 

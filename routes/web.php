@@ -28,3 +28,4 @@ Route::get('/listDetail/{id}', 'ProductsController@show')->name('listDetail.show
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/carritoDeCompras', 'ProductsController@carritoDeCompras');

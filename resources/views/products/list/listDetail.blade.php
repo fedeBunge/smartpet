@@ -4,7 +4,14 @@
 
 @section('content')
 
-<h2>{{ $product->name }}</h2>
+<div class="row">
+	<h2>{{ $product->name }}</h2>
+	<div class="col-xs-4">
+			<a class="buttonCarrito" data-id="{{ $product->id}}" data-name="{{ $product->name}}" href="#" ><img class="img-Carrito" src="/images/carrito.png" alt="carrito"></a>
+	</div>
+
+</div>
+
 <div class="table-responsive-sm">
 	<table class="table">
 		<tr>

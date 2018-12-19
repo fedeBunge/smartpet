@@ -12,6 +12,8 @@ use App\Animal;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Cookie;
+
 
 
 class ProductsController extends Controller
@@ -77,6 +79,7 @@ class ProductsController extends Controller
       if ($category= Category::find($id)) {
         //$productsCategory=  DB::table('products')->where('category_id','=',$id)->skip(0)->take(5)->get();
         $productsCategory= Product::where('category_id', '=', $id)->paginate(10);
+        Cookie::queue('cookie2','valor2',60);
         return view('products.list.listByCategory')->with(compact('productsCategory','category'));
       }else {
         return('<h1>Categoria inexistente</h1>');
@@ -185,5 +188,23 @@ class ProductsController extends Controller
       }
 
     }
+
+  public function carritoDeCompras(){
+
+    //$cookie=Request::cookie('carrito');
+     //$cookie=Cookie::get('cookie2');
+
+     $products=[];
+     if (isset($_COOKIE['carrito'])) {
+       $cookie=   json_decode($_COOKIE['carrito']);
+       foreach ($cookie->productos as $key=>$value) {
+        // var_dump($value);
+        array_push($products, Product::find($value));
+      }
+     }
+
+   return view('products.carrito')->with(compact('products'));
+
+  }
 
 }
