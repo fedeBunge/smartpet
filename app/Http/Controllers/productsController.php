@@ -82,12 +82,12 @@ class ProductsController extends Controller
     {
       if ($category= Category::find($id)) {
         //$productsCategory=  DB::table('products')->where('category_id','=',$id)->skip(0)->take(5)->get();
-<<<<<<< HEAD
+
         $productsCategory= Product::where('category_id', '=', $id)->paginate(10);
-        Cookie::queue('cookie2','valor2',60);
-=======
+        //Cookie::queue('cookie2','valor2',60);
+
         $productsCategory= Product::where('category_id', '=', $id)->where('active', '=', '1')->paginate(10);
->>>>>>> bf9e32bbc25ce02ff185d018d3ff0c2e42ca9fa6
+
         return view('products.list.listByCategory')->with(compact('productsCategory','category'));
       }else {
         return('<h1>Categoria inexistente</h1>');
