@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
 
         factory(App\User::class)->times(150)->create();
 
-        $products = factory(App\Product::class)->times(50)->create();
+        $products = factory(App\Product::class)->times(300)->create();
         $brands = factory(App\Brand::class)->times(10)->create();
         $categories = \App\Category::all();
         $animals = \App\Animal::all();
