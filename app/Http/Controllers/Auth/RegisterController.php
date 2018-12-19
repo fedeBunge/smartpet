@@ -49,9 +49,23 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'name' => ['required', 'string', 'max:100'],
+            'nickname' => ['required', 'string', 'max:15'],
+            'country' => ['required'],
+            'state' => ['required_if:country,==,Argentina'],
+            'email' => ['required', 'string', 'email', 'max:190', 'unique:users'],
+            'password' => ['required', 'string', 'min:4', 'confirmed'],
+            // 'avatar' => ['required', 'string', 'max:255']
+        ],
+        [
+            'required' => 'Este campo es obligatorio',
+            'name.max' => 'Máximo: 100 caracteres',
+            'nickname.max' => 'Máximo: 15 caracteres',
+            'unique' => 'Este correo electrónico ya está registrado',
+            'email' => 'Formato de correo inválido',
+            'email.max' => 'Máximo: 190 caracteres',
+            'password.min' => 'La contraseña debe tener al menos 4 caracteres',
+            'confirmed' => 'Las contraseñas no coinciden'
         ]);
     }
 
@@ -63,10 +77,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // dd($data);
         return User::create([
             'name' => $data['name'],
+            'nickname' => $data['nickname'],
+            'country' => $data['country'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            // 'avatar' => $data['avatar']
         ]);
     }
 }

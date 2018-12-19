@@ -118,7 +118,7 @@ window.onload = function () {
 			this.classList.add('is-invalid');
 			error.innerText = 'El campo ' + nombreCampo + ' es obligatorio';
 		} else if (!regexEmail.test(this.value.trim())) {
-			error.innerText = 'Escribí un formato de email valido';
+			error.innerText = 'Escribe un formato de email válido';
 		} else {
 			error.innerText = '';
 			this.classList.remove('is-invalid');
@@ -154,7 +154,7 @@ window.onload = function () {
 			this.classList.add('is-invalid');
 			error.innerText = 'El campo ' + nombreCampo + ' es obligatorio';
 		} else if (this.value.trim().length < 4) {
-			error.innerText = 'La contraseña debe tener más de 4 caracteres';
+			error.innerText = 'La contraseña debe tener al menos 4 caracteres';
 		} else {
 			error.innerText = '';
 			this.classList.remove('is-invalid');

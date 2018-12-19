@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/teste', function() {
+  return view('auth.registerLaravel');
+});
+
 Route::get('/', 'HomeController@index');
 
 Route::get('/faq', 'StaticController@indexFAQ');
