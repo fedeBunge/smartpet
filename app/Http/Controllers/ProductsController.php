@@ -36,6 +36,11 @@ class ProductsController extends Controller
      */
     public function create()
     {
+
+      if (!Auth::user()->admin) {
+        return redirect('/');
+      }
+
       $categories = Category::all();
       $brands = Brand::all();
       $animals = Animal::all();
@@ -56,7 +61,7 @@ class ProductsController extends Controller
 
       self::saveProductValues($request, $product);
 
-      return redirect('/listDetail/'.$product->id);
+      return redirect('/products/'.$product->id);
 
     }
 
@@ -70,8 +75,8 @@ class ProductsController extends Controller
     {
       $product = Product::find($id);
 
-      if (!$product->active) {
-        return redirect('/home');
+      if (!$product || !$product->active) {
+        return redirect('/');
       }
 
       return view('products.list.listDetail')->with(compact('product'));
@@ -123,10 +128,15 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
+
+      if (!Auth::user()->admin) {
+        return redirect('/');
+      }
+
       $product = Product::find($id);
 
-      if (!$product->active) {
-        return redirect('/home');
+      if (!$product || !$product->active) {
+        return redirect('/');
       }
 
       $categories = Category::all();
@@ -149,7 +159,7 @@ class ProductsController extends Controller
 
       self::saveProductValues($request, $product);
 
-      return redirect('/listDetail/'.$product->id);
+      return redirect('/products/'.$product->id);
     }
 
     /**
