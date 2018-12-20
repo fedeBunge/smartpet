@@ -1,4 +1,4 @@
-$(window).on("load", function() {
+// $(window).on("load", function() {
 
 
   // Defino las funciones para mostrar y esconder los menús
@@ -98,4 +98,4 @@ $(window).on("load", function() {
 
   $(".todas-las-categorias-mobile").on("click", toggleCategoriasMobile);
 
-})
+// })

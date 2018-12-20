@@ -91,3 +91,7 @@
   <!-- Bootstrap Product Container END -->
 
 @endsection
+
+@section('other-scripts')
+  <script src={{ asset('/js/postRegistro.js') }}></script>
+@endsection

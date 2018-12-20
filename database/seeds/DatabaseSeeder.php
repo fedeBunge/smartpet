@@ -27,7 +27,38 @@ class DatabaseSeeder extends Seeder
     			['name'=>'Otros'],
     		]);
 
-        factory(App\User::class)->times(150)->create();
+        DB::table('users')->insert([
+            ['name'=>'Gabriel Hocsman',
+            'nickname'=>'Gabriel',
+            'country'=>'Argentina',
+            'email'=>'gabrielhocsman@gmail.com',
+            'password'=>'$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm',
+            'admin'=>1,
+            ],
+            ['name'=>'Federico Bunge',
+            'nickname'=>'fedebunge',
+            'country'=>'Argentina',
+            'email'=>'fbunge@bungesa.com.ar',
+            'password'=>'$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm',
+            'admin'=>1,
+            ],
+            ['name'=>'Leandro Agustín Vilanova',
+            'nickname'=>'Agus-Vila',
+            'country'=>'Argentina',
+            'email'=>'luguergus.lv@gmail.com',
+            'password'=>'$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm',
+            'admin'=>1,
+            ],
+            ['name'=>'Santiago Bouso',
+            'nickname'=>'esmowin',
+            'country'=>'Argentina',
+            'email'=>'santiagobouso@hotmail.com',
+            'password'=>'$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm',
+            'admin'=>1,
+            ]
+      	]);
+
+        factory(App\User::class)->times(46)->create();
 
         $products = factory(App\Product::class)->times(300)->create();
         $brands = factory(App\Brand::class)->times(10)->create();

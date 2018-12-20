@@ -112,6 +112,10 @@
   padding: 5px;
 }
 
+.registro-borde-error {
+  border: solid 1px red;
+}
+
 .registro-error {
   font-size: 10px;
   color: red;

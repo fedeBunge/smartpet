@@ -46,11 +46,6 @@
     width: 95%;
   }
 
-  .registro-nombre-y-campo {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .imagen-editar-producto {
     align-self: center;
     width: 200px;

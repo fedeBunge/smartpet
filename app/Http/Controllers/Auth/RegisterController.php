@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -55,17 +56,20 @@ class RegisterController extends Controller
             'state' => ['required_if:country,==,Argentina'],
             'email' => ['required', 'string', 'email', 'max:190', 'unique:users'],
             'password' => ['required', 'string', 'min:4', 'confirmed'],
-            // 'avatar' => ['required', 'string', 'max:255']
+            'avatar' => ['required', 'image', 'max:2048']
         ],
         [
             'required' => 'Este campo es obligatorio',
             'name.max' => 'Máximo: 100 caracteres',
             'nickname.max' => 'Máximo: 15 caracteres',
+            'state.required_if' => 'Si eres de Argentina, elige tu provincia',
             'unique' => 'Este correo electrónico ya está registrado',
             'email' => 'Formato de correo inválido',
             'email.max' => 'Máximo: 190 caracteres',
             'password.min' => 'La contraseña debe tener al menos 4 caracteres',
-            'confirmed' => 'Las contraseñas no coinciden'
+            'confirmed' => 'Las contraseñas no coinciden',
+            'image' => 'Formato inválido',
+            'avatar.max' => 'Tamaño máximo: 2MB'
         ]);
     }
 
@@ -77,14 +81,31 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        // dd($data);
-        return User::create([
-            'name' => $data['name'],
-            'nickname' => $data['nickname'],
-            'country' => $data['country'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            // 'avatar' => $data['avatar']
-        ]);
+        $request = app('request');
+
+        $archivoAvatar = $request->file('avatar');
+        $nombreAvatar = uniqid("avatar_") . "." . $archivoAvatar->extension();
+        $archivoAvatar->storePubliclyAs("public/avatars", $nombreAvatar);
+
+        if (isset($data['state'])) {
+          return User::create([
+              'name' => $data['name'],
+              'nickname' => $data['nickname'],
+              'country' => $data['country'],
+              'state' => $data['state'],
+              'email' => $data['email'],
+              'password' => Hash::make($data['password']),
+              'avatar' => $nombreAvatar
+          ]);
+        } else {
+          return User::create([
+              'name' => $data['name'],
+              'nickname' => $data['nickname'],
+              'country' => $data['country'],
+              'email' => $data['email'],
+              'password' => Hash::make($data['password']),
+              'avatar' => $nombreAvatar
+          ]);
+      }
     }
 }
