@@ -1,5 +1,7 @@
 <header>
-
+  @auth
+  <span style="display: none" id="idUser">{{Auth::user()->id}}</span>
+  @endauth
   <!-- Barra superior DESKTOP // Barra única MOBILE -->
 
   <nav class="header-superior">
@@ -148,5 +150,7 @@
     </ul>
 
   </nav>
-
+  @section('other-scripts')
+    <script src={{ asset('/js/themes.js') }}></script>
+  @endsection
 </header>

@@ -129,10 +129,8 @@ window.onload = function () {
 			campoEmail.innerText = 'Escribí un formato de email valido';
     } else {
 			campos.forEach(function (campo) {
-				finalData[campo.name] = campo.value;
 				var error = campo.parentElement.querySelector('.registro-error-js');
 				campo.classList.remove('is-invalid');
-				campo.value = '';
 				error.innerText = '';
 			});
 		}
