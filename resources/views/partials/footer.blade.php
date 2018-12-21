@@ -37,7 +37,7 @@
     <div class="footer-inferior">
 
       <div class="footer-copyright">
-        <h6>Copyright © SmartPet 2018</h6>
+        <h6>Copyright © 2018 SmartPet</h6>
       </div>
 
       <div class="footer-creditos">

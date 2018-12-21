@@ -6,7 +6,7 @@
 
   <div class="registro-titulos">
     <h1>Ingresa a tu cuenta</h1>
-    <h5>No tienes una cuenta? Regístrate en SmartPet <a href="registro.php">aquí</a>!</h5>
+    <h5>No tienes una cuenta? Regístrate en SmartPet <a href="/register">aquí</a>!</h5>
   </div>
 
   <form class="registro-formulario" action="/login" method="post">
@@ -18,7 +18,7 @@
       <div class="registro-nombre-y-campo">
         <label for="email" class="registro-nombre">Correo electrónico:</label>
         <div class="registro-campo">
-          <input id="email" type="text" name="email" {{ $errors->has('email') ? 'style="border: solid 2px red"' : '' }} value="{{ old('email') }}" autofocus>
+          <input id="email" type="text" name="email" {{ $errors->has('email') ? 'class=registro-borde-error' : '' }} value="{{ old('email') }}" autofocus>
           {{-- @if ($errors->has('email'))
             <br><span class="registro-error">{{ $errors->first('email') }}</span>
           @endif --}}
@@ -29,7 +29,7 @@
       <div class="registro-nombre-y-campo">
         <label for="password" class="registro-nombre">Contraseña:</label>
         <div class="registro-campo">
-          <input id="password" type="password" name="password" value="" {{ $errors->has('password') ? 'style="border: solid 2px red"' : '' }}>
+          <input id="password" type="password" name="password" value="" {{ $errors->has('password') ? 'class=registro-borde-error' : '' }}>
           {{-- @if ($errors->has('password'))
             <br><span class="registro-error">{{ $errors->first('password') }}</span>
           @endif --}}

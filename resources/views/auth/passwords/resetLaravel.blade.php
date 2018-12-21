@@ -1,59 +1,6 @@
-@extends('template.base')
-
-@section('title', 'SmartPet - Restablecer contraseña')
+@extends('layouts.app')
 
 @section('content')
-
-  <div class="registro-titulos">
-
-    <h1>Restablecer contraseña</h1>
-    <h5>Completa los campos</h5>
-
-  </div>
-
-  <form class="registro-formulario" action="{{ route('password.update') }}" method="post">
-    @csrf
-
-    <input type="hidden" name="token" value="{{ $token }}">
-
-    <div class="registro-container-campos">
-
-      <div class="registro-nombre-y-campo">
-        <label for="email" class="registro-nombre">Correo electrónico:</label>
-        <div class="registro-campo">
-          <input id="email" type="text" name="email" {{ $errors->has('email') ? 'class=registro-borde-error' : '' }} value="{{ $email ?? old('email') }}" autofocus>
-          <br>
-          <span class="registro-error">{{ $errors->has('email') ? $errors->first('email') : '' }}</span>
-        </div>
-      </div>
-
-      <div class="registro-nombre-y-campo">
-        <label for="password" class="registro-nombre">Contraseña:</label>
-        <div class="registro-campo">
-          <input id="password" type="password" name="password" {{ $errors->has('password') ? 'class=registro-borde-error' : '' }}>
-          <br>
-          <span class="registro-error">{{ $errors->has('password') ? $errors->first('password') : '' }}</span>
-        </div>
-      </div>
-
-      <div class="registro-nombre-y-campo">
-        <label for="password-confirm" class="registro-nombre">Confirmar contraseña:</label>
-        <div class="registro-campo">
-          <input id="password-confirm" type="password" name="password_confirmation">
-          {{-- <br>
-          <span class="registro-error">{{ $errors->has('password') ? $errors->first('password') : '' }}</span> --}}
-        </div>
-      </div>
-
-    </div>
-
-    <button class="registro-button" type="submit">Restablecer contraseña</button>
-
-  </form>
-
-@endsection
-
-{{-- @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -115,4 +62,4 @@
         </div>
     </div>
 </div>
-@endsection --}}
+@endsection
