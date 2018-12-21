@@ -4,38 +4,43 @@
 
 @section('content')
 
-<div class="row">
-	<h2>{{ $product->name }}</h2>
-	<div class="col-xs-4">
-			<a class="buttonCarrito" data-id="{{ $product->id}}" data-name="{{ $product->name}}" href="#" ><img class="img-Carrito" src="/images/carrito.png" alt="carrito"></a>
+
+
+<div class="container">
+
+	<div class="row">
+		<h2>{{ $product->name }}</h2>
 	</div>
+	<br>
 
-</div>
-
-<div class="table-responsive-sm">
+	@if (substr($product->image, 0, 4) == 'http')
+		<img src="{{$product->image}}" width="250" alt="" class="">
+	@else
+		<img src="/storage/products/{{$product->image}}" width="250" alt="" class="">
+	@endif
+	<br>
+	<h4>Nombre </h4>
+	<p>{{ $product->name }}</p>
+	<h4>Precio </h4>
+	<p>${{$product->price}}</p>
 	<table class="table">
-		<tr>
-			<td>Imagen</td>
-			<td>Nombre</td>
-			<td>Precio $</td>
-			<td>Categoria</td>
-			<td>Animal</td>
-			<td>Descripción</td>
+		<tr class="">
+			<td><b>Categoria</b></td>
+			<td><b>Animal</b></td>
+			{{-- <td>Descripción</td> --}}
 	  </tr>
-
 		<tr>
-			@if (substr($product->image, 0, 4) == 'http')
-				<td><img src="{{$product->image}}" width="250" alt="" class=""></td>
-			@else
-				<td><img src="/storage/products/{{$product->image}}" width="250" alt="" class=""></td>
-			@endif
-			<td>{{ $product->name }}</td>
-			<td>{{$product->price}}</td>
 			<td>{{$product->category->name}}</td>
 			<td>{{$product->animal->name}}</td>
-			<td>{{$product->description}}</td>
 		</tr>
 	</table>
+	<h3>Descripción</h3>
+	<p>{{$product->description}}</p>
+
+	<div class="row">
+			<h3>Comprar: </h3>
+			<a class="buttonCarrito" data-id="{{ $product->id}}" data-name="{{ $product->name}}" href="#" ><img class="img-Carrito" src="/images/carrito.png" alt="carrito"></a>
+	</div>
 </div>
 
 @guest
@@ -57,6 +62,7 @@
 			@endif
 
 			<a href="{{ URL::previous() }}" class="btn btn-primary" style="width: 78px;">Volver</a>
+
 
 @endguest
 
