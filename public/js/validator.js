@@ -252,6 +252,7 @@ window.addEventListener('load', function(){
 			campoPassword2.classList.add('registro-borde-error');
 			campoPassword2.parentElement.querySelector('.registro-error').innerText = 'Las contraseñas no coinciden';
     } else if (!regexEmail.test(campoEmail.value.trim())) {
+      campoEmail.classList.add('registro-borde-error');
       e.preventDefault();
 			campoEmail.innerText = 'Formato de correo inválido';
     } else {
