@@ -4,11 +4,37 @@ window.addEventListener('load', function(){
   var campoEmail = formulario.email;
   var campoPassword = formulario.password;
 
-  // var campos = formulario.elements;
-	// campos = Array.from(campos);
-	// campos.pop();
-
   const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+  function validateEmpty () {
+    var error = this.parentNode.querySelector('.registro-error');
+    // var nombreCampo = this.parentNode.parentNode.querySelector('label').innerText;
+    if (this.value.trim() === '') {
+      this.classList.add('registro-borde-error');
+      error.innerText = 'Este campo es obligatorio';
+    } else {
+      error.innerText = '';
+      this.classList.remove('registro-borde-error');
+    }
+  }
+
+  function validateEmptyAndEmail () {
+    var error = this.parentElement.querySelector('.registro-error');
+    // var nombreCampo = this.parentNode.parentNode.querySelector('label').innerText;
+    if (this.value.trim() === '') {
+      this.classList.add('registro-borde-error');
+      error.innerText = 'Este campo es obligatorio';
+    } else if (!regexEmail.test(this.value.trim())) {
+      this.classList.add('registro-borde-error');
+      error.innerText = 'Formato de correo inválido';
+    } else {
+      error.innerText = '';
+      this.classList.remove('registro-borde-error');
+    }
+  }
+
+  campoEmail.addEventListener('blur', validateEmptyAndEmail);
+  campoPassword.addEventListener('blur', validateEmpty);
 
   formulario.addEventListener('submit', function (e) {
 

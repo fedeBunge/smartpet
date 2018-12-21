@@ -1,7 +1,11 @@
 <header>
+
+  {{-- Si el usuario está logueado, agarramos su id desde JS a través de span invisible para cargar el tema que le corresponda --}}
+
   @auth
-  <span style="display: none" id="idUser">{{Auth::user()->id}}</span>
+    <span style="display: none" id="idUser">{{Auth::user()->id}}</span>
   @endauth
+
   <!-- Barra superior DESKTOP // Barra única MOBILE -->
 
   <nav class="header-superior">

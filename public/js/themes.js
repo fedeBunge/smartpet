@@ -21,9 +21,11 @@
 //       }
 //     }
 //   }
-var id = document.getElementById('idUser').innerText;
-var tema = localStorage.getItem(id);
-if (tema == "navidad")
-{
-  document.getElementById('theme').href = '/css/styles/paletaColoresNavidad.css';
+if (document.getElementById('idUser')) {
+  var id = document.getElementById('idUser').innerText;
+  var tema = localStorage.getItem(id);
+  if (tema == "navidad")
+  {
+    document.getElementById('theme').href = '/css/styles/paletaColoresNavidad.css';
+  }
 }
