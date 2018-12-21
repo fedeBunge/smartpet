@@ -15,9 +15,8 @@
   width: 40px;
 }
 
-.buttonCarrito:hover{
-
-  transform: scale(1.05,1.15);
+.img-Carrito:hover{
+  transform: scale(1.05,1.2);
   box-shadow: 0.5px 0.5px 1px #D3D3D2;
   transition-property: all;
   transition-duration: 0.3s;
@@ -106,6 +105,14 @@
 }
 
 /* fin producto_grilla en grilla*/
+
+.tabla_carrito{
+  background: white;
+}
+.tr_indice{
+  background:#007bff;
+  color:white;
+}
 
 @media (min-width: 780px) {
 

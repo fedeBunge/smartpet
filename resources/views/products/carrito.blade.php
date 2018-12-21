@@ -9,14 +9,17 @@
 {{-- @dd($products) --}}
 
 <div class="table-responsive-sm">
-	<table class="table">
-		<tr>
-			<td>Nombre</td>
-			<td>Precio $</td>
-			<td>Categoria</td>
-			<td>Animal</td>
-			{{-- <td>Descripción</td> --}}
-	  </tr>
+
+	@if ($products)
+		<table class="table tabla_carrito">
+			<tr class="tr_indice">
+				<td><b>Nombre</b></td>
+				<td><b>Precio $</b></td>
+				<td><b>Categoria</b></td>
+				<td><b>Animal</b></td>
+				{{-- <td>Descripción</td> --}}
+		  </tr>
+	@endif
 
     @forelse ($products as $product)
       <tr>
@@ -33,6 +36,9 @@
 	</table>
 </div>
 
+@if ($products)
+	<button id="vaciarCarrito" type="button" class="btn btn-primary">Vaciar Carrito</button>
+@endif
 
 
 

@@ -25,6 +25,7 @@
     <script src={{ asset('/js/bootstrap.min.js') }}></script>
     <script src={{ asset('/js/header.js') }}></script>
     <script src={{ asset('/js/themes.js') }}></script>
+    <script src={{ asset('/js/carrito.js') }}></script>
     @yield('other-scripts')
 
   </body>
