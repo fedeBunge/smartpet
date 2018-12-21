@@ -72,7 +72,7 @@
         <label for="email" class="registro-nombre">Correo electrónico:</label>
         <div class="registro-campo">
           <input {{ $errors->has('email') ? 'class=registro-borde-error' : '' }} type="text" name="email" id="email" value="{{ old('email') }}">
-          <div class="registro-error-js"></div>
+          {{-- <div class="registro-error-js"></div> --}}
           {{-- @if ($errors->has('email'))
             <span class="registro-error">{{ $errors->first('email') }}</span>
           @endif --}}

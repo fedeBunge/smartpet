@@ -19,9 +19,10 @@
         <label for="email" class="registro-nombre">Correo electrónico:</label>
         <div class="registro-campo">
           <input id="email" type="text" name="email" {{ $errors->has('email') ? 'style="border: solid 2px red"' : '' }} value="{{ old('email') }}" autofocus>
-          @if ($errors->has('email'))
+          {{-- @if ($errors->has('email'))
             <br><span class="registro-error">{{ $errors->first('email') }}</span>
-          @endif
+          @endif --}}
+          <br><span class="registro-error">{{ $errors->has('email') ? $errors->first('email') : '' }}</span>
         </div>
       </div>
 
@@ -29,9 +30,10 @@
         <label for="password" class="registro-nombre">Contraseña:</label>
         <div class="registro-campo">
           <input id="password" type="password" name="password" value="" {{ $errors->has('password') ? 'style="border: solid 2px red"' : '' }}>
-          @if ($errors->has('password'))
+          {{-- @if ($errors->has('password'))
             <br><span class="registro-error">{{ $errors->first('password') }}</span>
-          @endif
+          @endif --}}
+          <br><span class="registro-error">{{ $errors->has('password') ? $errors->first('password') : '' }}</span>
         </div>
       </div>
 
@@ -47,4 +49,8 @@
 
   </form>
 
+@endsection
+
+@section('other-scripts')
+  <script src={{ asset('/js/loginValidator.js') }}></script>
 @endsection
