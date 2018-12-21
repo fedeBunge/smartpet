@@ -11,6 +11,14 @@
   justify-content:space-around;
 }
 
+.nombre-producto-y-carrito {
+  display: flex;
+}
+
+.carrito-agregar-producto {
+  margin-left: 10px;
+}
+
 .img-Carrito{
   width: 40px;
 }

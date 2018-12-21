@@ -2,7 +2,7 @@
 
 {{-- @dd($productsCategory) --}}
 @section('title')
-{{'Buscar Producto'}}
+SmartPet - {{'Buscador de productos'}}: {{$find}}
 {{-- <h1></h1> --}}
 @endsection
 

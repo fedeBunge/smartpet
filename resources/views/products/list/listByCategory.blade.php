@@ -3,7 +3,7 @@
 {{-- @dd($productsCategory) --}}
 @section('title')
 {{-- {{$productsCategory[1]->category->name}}) --}}
-{{$category->name}}
+SmartPet - {{$category->name}}
 @endsection
 
 @section('category')

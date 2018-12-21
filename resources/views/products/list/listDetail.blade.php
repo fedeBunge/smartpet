@@ -1,15 +1,14 @@
 @extends('template.products.templateProducts')
 
-@section('title', 'Detalle del Producto')
+@section('title', 'SmartPet - Detalle del Producto')
 
 @section('content')
 
-<div class="row">
+<div class="nombre-producto-y-carrito">
 	<h2>{{ $product->name }}</h2>
-	<div class="col-xs-4">
+	<div class="col-xs-4 carrito-agregar-producto">
 			<a class="buttonCarrito" data-id="{{ $product->id}}" data-name="{{ $product->name}}" href="#" ><img class="img-Carrito" src="/images/carrito.png" alt="carrito"></a>
 	</div>
-
 </div>
 
 <div class="table-responsive-sm">
