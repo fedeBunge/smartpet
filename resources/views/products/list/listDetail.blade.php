@@ -51,13 +51,13 @@
 
 		@if (Auth::user()->admin)
 
-			<a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning" style="width: 78px;">Edit</a>
-
-			<form action="/products/{{ $product->id }}" method="post" style="display: inline-block;" style="width: 78px;">
+			<form class="boton-borrar-producto" action="/products/{{ $product->id }}" method="post" style="display: inline-block;" style="width: 78px;">
 				@csrf
 				{{ method_field('DELETE') }}
 				<button id="delete" type="submit" class="btn btn-danger">Delete</button>
 			</form>
+
+			<a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning" style="width: 78px; margin-right: 20px; margin-left: 20px">Edit</a>
 
 			@endif
 
@@ -68,4 +68,10 @@
 
 </div>
 
+<br>
+
+@endsection
+
+@section('other-scripts')
+	<script src={{ asset('/js/confirmarDelete.js') }}></script>
 @endsection
