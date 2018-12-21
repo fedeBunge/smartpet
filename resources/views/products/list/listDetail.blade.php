@@ -17,8 +17,6 @@
 		<img src="/storage/products/{{$product->image}}" width="250" alt="" class="">
 	@endif
 	<br><br>
-	<h4>Nombre </h4>
-	<p>{{ $product->name }}</p>
 	<h4>Precio </h4>
 	<p>${{$product->price}}</p>
 	<br>
