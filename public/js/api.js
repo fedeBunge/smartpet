@@ -1,5 +1,6 @@
-// window.onload = function() {
+window.addEventListener('load', function(){
 
+  var formulario = document.querySelector('.registro-formulario');
   var selectPaises = document.querySelector('.registro-dropdown');
   var campoProvincia = document.getElementById('state');
 
@@ -34,7 +35,34 @@
 
   var cargarProvincias = function() {
 
-    campoProvincia.innerHTML = '<label for="state" class="registro-nombre">Provincia:</label><div class="registro-campo"><select class="registro-dropdown" name="state" id="dropdown-provincias"><option value="">----- Elige una provincia -----</option></select></div>';
+    campoProvincia.innerHTML = '<label for="state" class="registro-nombre">Provincia:</label><div class="registro-campo"><select class="registro-dropdown" name="state" id="dropdown-provincias"><option value="">----- Elige una provincia -----</option></select><div class="registro-error-js"></div></div>';
+
+    var campoState = document.getElementById('dropdown-provincias');
+    campoState.addEventListener('blur', function(){
+      var error = this.parentElement.querySelector('.registro-error-js');
+  		var nombreCampo = this.parentNode.parentNode.querySelector('label').innerText;
+  		if (this.value.trim() === '') {
+  			this.classList.add('registro-borde-error');
+  			error.innerText = 'Este campo es obligatorio';
+  		} else {
+  			error.innerText = '';
+  			this.classList.remove('registro-borde-error');
+  		}
+    });
+
+    formulario.addEventListener('submit', function (event) {
+      campoState = document.getElementById('dropdown-provincias');
+      console.log(campoState);
+      if (campoState) {
+        if (campoState.value.trim() === '') {
+          event.preventDefault();
+          console.log("Entré");
+          var error = campoState.parentElement.querySelector('.registro-error-js');
+          campoState.classList.add('registro-borde-error');
+          error.innerText = 'Este campo es obligatorio';
+        }
+      }
+    });
 
     fetch('https://dev.digitalhouse.com/api/getProvincias')
       .then(function(response) {
@@ -82,4 +110,4 @@
 
   });
 
-// }
+});
